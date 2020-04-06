@@ -318,3 +318,42 @@ Migrating to CreateMylists (20200406182052)
   ↳ bin/rails:9
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-04-06 17:51:14 -0400
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Joe/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+
+NameError - uninitialized constant StaticPagesController:
+
+Started POST "/__better_errors/cc94ac06654633ad/variables" for ::1 at 2020-04-06 17:51:15 -0400
+Started GET "/" for ::1 at 2020-04-06 17:52:06 -0400
+
+NameError - uninitialized constant RootController:
+
+Started POST "/__better_errors/9e5d1932691ba9a9/variables" for ::1 at 2020-04-06 17:52:07 -0400
+Started GET "/" for ::1 at 2020-04-06 17:52:13 -0400
+
+NameError - uninitialized constant RootController:
+
+Started POST "/__better_errors/e9e857a1a0c8cd1d/variables" for ::1 at 2020-04-06 17:52:13 -0400
+Started GET "/" for ::1 at 2020-04-06 17:53:08 -0400
+
+NameError - uninitialized constant RootController:
+
+Started POST "/__better_errors/ee9b131ab88a216b/variables" for ::1 at 2020-04-06 17:53:08 -0400
+Started GET "/" for ::1 at 2020-04-06 17:53:12 -0400
+
+NameError - uninitialized constant RootController:
+
+Started POST "/__better_errors/4b11ab00801bd02c/variables" for ::1 at 2020-04-06 17:53:13 -0400
+Started GET "/" for ::1 at 2020-04-06 17:54:45 -0400
+
+NameError - uninitialized constant RootController:
+
+Started POST "/__better_errors/0d80c80556a414d4/variables" for ::1 at 2020-04-06 17:54:45 -0400
+Started GET "/" for ::1 at 2020-04-06 17:56:23 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1457ms (Views: 1453.7ms | ActiveRecord: 0.0ms)
+
+
