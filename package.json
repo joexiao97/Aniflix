@@ -22,5 +22,24 @@
   "scripts": {
     "webpack": "webpack -w --mode=development",
     "postinstall": "webpack"
-  }
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joexiao97/Aniflix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joexiao97/Aniflix/issues"
+  },
+  "homepage": "https://github.com/joexiao97/Aniflix#readme"
 }
