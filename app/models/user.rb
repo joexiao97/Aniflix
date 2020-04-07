@@ -12,9 +12,6 @@
 #
 class User < ApplicationRecord
     
-    protect_from_forgery with: :exception
-    skip_before_action :verify_authenticity_token
-    
     validates :username, :email, presence: true, uniqueness: true
     validates :password_digest, :session_token, presence: true
     validates :password, length:{minimum: 6, allow_nil: true}
