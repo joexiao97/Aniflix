@@ -3,7 +3,8 @@ import Session from "./session_form";
 import { loginUser } from "../../actions/session_actions";
 
 const mapStateToProps = (state) => ({
-    formType: "login"
+    formType: "login",
+    errors: state.errors.session
 })
 
 const mapDispatchToProps = (dispatch) => ({

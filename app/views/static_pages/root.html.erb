@@ -1,6 +1,14 @@
 <div id="root">
-  <h1>Aniflix :) OVERWRITE ME</h1>
-  <script type="text/javascript">
-    window.mainpage = "<%= image_url("aniflixpic.jpg") %>"
-  </script>
+<h1>Aniflix :) OVERWRITE ME (root.html.erb)</h1>
 </div>
+
+<script type="text/javascript">
+  window.mainpage = "<%= image_url("aniflixpic.jpg") %>"
+</script>
+
+<% if logged_in? %>
+<script id="bootstrap-current-user" type="text/javascript">
+	window.currentUser = <%= render("api/users/user.json.jbuilder",
+		user: current_user).html_safe %>
+</script>
+<% end %>

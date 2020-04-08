@@ -43,7 +43,9 @@ class SessionForm extends React.Component {
                     <Link className="logo" to="/" >ANIFLIX</Link>
                     <div className="sign-in-box">
                         <header className="sign-in-logo">Sign In</header>
-
+                        <ul>
+                            {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
+                        </ul>
                         <label>
                            <input className="sign-in-input" type="text" placeholder="Username" value={this.state.username} onChange={this.update("username")} />
                         </label>

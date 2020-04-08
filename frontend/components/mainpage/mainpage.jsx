@@ -5,6 +5,13 @@ class Mainpage extends React.Component{
 
     constructor(props){
         super(props);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
+    }
+
+    handleDemoLogin(e){
+        e.preventDefault();
+        const user = {username: "demouser", password:"password123"};
+        this.props.login(user);
     }
 
     render(){
@@ -31,9 +38,10 @@ class Mainpage extends React.Component{
                         <h1>Unlimited movies, TV</h1>
                         <h1>shows, and more!</h1>
                     <h2>Watch any Anime, anywhere, anytime.</h2>
+                <Link className="demo-user-button" onClick={this.handleDemoLogin} to="/browse">Demo Login</Link>
                 </section>
             </main>
-
+            
             </div>
             </>
         )

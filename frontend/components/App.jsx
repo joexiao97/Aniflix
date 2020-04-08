@@ -15,7 +15,7 @@ const App = () => (
         {/* <Homepage/>
         <SessionForm /> */}
         </header>
-        <Route exact path ="/" component={mainpage_container}/>
+        <AuthRoute exact path ="/" component={mainpage_container}/>
         <AuthRoute exact path="/loginUser" component={login_form_container} />
         <AuthRoute exact path="/signupUser" component={signup_form_container} />
         <ProtectedRoute exact path="/browse" component={homepage_container} />
