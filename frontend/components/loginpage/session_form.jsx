@@ -39,8 +39,8 @@ class SessionForm extends React.Component {
                         alt="mainpage background"
                         className="mainpage-background"
                     />
-                    
-                    <div className="logo">ANIFLIX</div>
+
+                    <Link className="logo" to="/" >ANIFLIX</Link>
                     <div className="sign-in-box">
                         <header className="sign-in-logo">Sign In</header>
 
@@ -51,7 +51,12 @@ class SessionForm extends React.Component {
                             <input className="sign-in-input" type="password" placeholder="Password" value={this.state.password} onChange={this.update("password")} />
                         </label>
 
-                        <Link className="sign-in-btn" onClick={this.handleSubmit} to="/loginUser">Sign In</Link>
+                        <Link className="sign-in-btn" onClick={this.handleSubmit} to="/browse">Sign In</Link>
+
+                        <div className="sign-up-session">
+                            <p className="new-to-ani">New to Aniflix?  </p>
+                            <Link className="sign-up-btn" to="/">Sign Up</Link>
+                        </div>
 
                     </div>
                 </>
@@ -62,7 +67,7 @@ class SessionForm extends React.Component {
             return (
                 <>
                     <header>Sign Up</header>
-                    <form action="">
+                    <form >
                         <label>email:
                         <input type="text" value={this.state.email} onChange={this.update("email")} />
                         </label>

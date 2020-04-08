@@ -5,7 +5,8 @@ import { Route } from "react-router-dom";
 import login_form_container from "./loginpage/login_form_container";
 import signup_form_container from "./loginpage/signup_form_container";
 import mainpage_container from "./mainpage/mainpage_container";
-import { AuthRoute } from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import homepage_container from "./homepage/homepage_container";
 
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
         <Route exact path ="/" component={mainpage_container}/>
         <AuthRoute exact path="/loginUser" component={login_form_container} />
         <AuthRoute exact path="/signupUser" component={signup_form_container} />
+        <ProtectedRoute exact path="/browse" component={homepage_container} />
     </div>
 );
 

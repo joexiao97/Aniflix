@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Homepage from "./homepage";
 
 const mapStateToProps = (state) => ({
-    currentUser: state.entities.users[state.session.id]
+    user: state.entities.user[state.session.id]
+    //fix user
 });
 
 const mapDispatchToProps = (dispatch) => ({

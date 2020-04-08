@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 
 class Homepage extends React.Component{
 
+    constructor(props) {
+        super(props);
+        this.handleLogout = this.handleLogout.bind(this);
+    }
+
+    handleLogout(e) {
+        e.preventDefault();
+        this.props.logout();
+    }
 
     render(){
         return (
@@ -12,10 +21,10 @@ class Homepage extends React.Component{
                     <h1>Testing Homepage</h1>
                 </div>
             </header>
-
+                <h1>HOMEPAGE, WELCOME {this.props.username}</h1>
+                <Link className="logout-btn" onClick={this.handleLogout} to="/">Log Out</Link>
             <div>
-                {/* <Link className="btn" to="/signupUser">Sign Up</Link> */}
-                <Link className="btn" to="/loginUser">Log In</Link>
+                
             </div>
             </>
         );
