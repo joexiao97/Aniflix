@@ -27,7 +27,7 @@ class Mainpage extends React.Component{
 
             <div className="main-nav">
                 <div className="logo">ANIFLIX</div>
-                <Link to="/loginUser" className="login-button">Sign In</Link>
+                <Link to="/login" className="login-button">Sign In</Link>
             </div>
 
 

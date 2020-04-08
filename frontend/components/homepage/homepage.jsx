@@ -22,7 +22,7 @@ class Homepage extends React.Component{
                 </div>
             </header>
                 <h1>HOMEPAGE, WELCOME {this.props.username}</h1>
-                <Link className="logout-btn" onClick={this.handleLogout} to="/">Log Out</Link>
+                <Link className="logout-btn hover-box" onClick={this.handleLogout} to="/">Log Out</Link>
             <div>
                 
             </div>

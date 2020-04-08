@@ -1,0 +1,11 @@
+.hover-box:hover{
+    cursor: pointer;
+}
+
+.sign-error{
+    color: orange;
+}
+
+.sign-box-errors{
+    padding-bottom: 5px;
+}
