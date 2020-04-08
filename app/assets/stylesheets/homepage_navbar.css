@@ -1,0 +1,52 @@
+.nav-bar{
+    display: flex;
+    background-color:rgb(20,20,20);
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+
+.nav-sub-btns{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: gray;
+}
+
+.nav-sub-c{
+    margin-right: 20px;
+    align-self: center ;
+}
+
+.browse-logo{
+    margin-right: 25px;
+    margin-left: 25px;
+    color: red;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.logout-btn{
+    margin-right: 25px;
+    color: red;
+}
+
+.selected-nav{
+    color: white;
+}
+
+.nav-home:hover{
+    color: darkgray;
+}
+
+.nav-tv-shows:hover{
+    color: darkgray;
+}
+
+.nav-movies:hover{
+    color: darkgray;
+}
+
+.nav-mylist:hover{
+    color: darkgray;
+}
