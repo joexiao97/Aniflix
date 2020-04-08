@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import Background from "/app/assets/images/aniflixpic.jpg"
 
 
 class SessionForm extends React.Component {
@@ -32,16 +33,27 @@ class SessionForm extends React.Component {
         if (this.props.formType === "login") {
             return (
                 <>
-                    <header>Login</header>
 
-                    <label>username:
-                        <input type="text" value={this.state.username} onChange={this.update("username")} />
-                    </label>
-                    <label>password:
-                        <input type="password" value={this.state.password} onChange={this.update("password")} />
-                    </label>
+                    <img
+                        src={window.mainpage}
+                        alt="mainpage background"
+                        className="mainpage-background"
+                    />
+                    
+                    <div className="logo">ANIFLIX</div>
+                    <div className="sign-in-box">
+                        <header className="sign-in-logo">Sign In</header>
 
-                    <Link className="btn" onClick={this.handleSubmit} to="/loginUser">Login</Link>
+                        <label>
+                           <input className="sign-in-input" type="text" placeholder="Username" value={this.state.username} onChange={this.update("username")} />
+                        </label>
+                        <label>
+                            <input className="sign-in-input" type="password" placeholder="Password" value={this.state.password} onChange={this.update("password")} />
+                        </label>
+
+                        <Link className="sign-in-btn" onClick={this.handleSubmit} to="/loginUser">Sign In</Link>
+
+                    </div>
                 </>
             )
         }

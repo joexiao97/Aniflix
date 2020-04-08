@@ -10,6 +10,12 @@ class Mainpage extends React.Component{
     render(){
         return(
             <>
+            <img 
+                src={window.mainpage}
+                alt="mainpage background"
+                className="mainpage-background"
+            />
+            
             <div className="main">
 
             <div className="main-nav">
@@ -22,7 +28,8 @@ class Mainpage extends React.Component{
             
             <main className="center">
                 <section className="main-info">
-                    <h1>Unlimited movies, TV shows, and more!</h1>
+                        <h1>Unlimited movies, TV</h1>
+                        <h1>shows, and more!</h1>
                     <h2>Watch any Anime, anywhere, anytime.</h2>
                 </section>
             </main>

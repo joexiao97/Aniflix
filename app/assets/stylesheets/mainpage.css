@@ -1,12 +1,19 @@
 .main{
-    width: auto;
-    height: 1191px;
-    background-image: url("aniflixpic.jpg");
+    /* position: absolute; */
 }
 
-.center{
-    text-align: center;
-    top: 100px;
+.mainpage-background{
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.main-info{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    /* width: 500px; */
 }
 
 .main-info > h1{
