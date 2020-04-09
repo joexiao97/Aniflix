@@ -17,13 +17,15 @@ class Mainpage extends React.Component{
     render(){
         return(
             <>
-            <img 
+
+            <div className="main">
+                
+            <div className="mainpage-background">
+            <img
                 src={window.mainpage}
                 alt="mainpage background"
-                className="mainpage-background"
             />
-            
-            <div className="main">
+            </div>
 
             <div className="main-nav">
                 <div className="logo">ANIFLIX</div>

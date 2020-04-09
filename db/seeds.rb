@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 joexiao97 = User.create!(username: "joexiao97", password:"password", email:"joexiao97@aniflix.com")
-demo_user = User.create!(username: "demouser", password:"password123",email:"demouser@aniflix.com");
+demo_user = User.create!(username: "demouser", password:"password123",email:"demouser@aniflix.com")

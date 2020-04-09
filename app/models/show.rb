@@ -15,4 +15,8 @@
 #  updated_at   :datetime         not null
 #
 class Show < ApplicationRecord
+    validates :title, :genres, :type, :runtime, :cast, presence: true
+
+    has_one_attached :picture
+    has_one_attached :video
 end
