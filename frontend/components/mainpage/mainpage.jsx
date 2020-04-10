@@ -20,12 +20,12 @@ class Mainpage extends React.Component{
 
             <div className="main">
                 
-            <div className="mainpage-background">
+            {/* <div className="mainpage-background">
             <img
                 src={window.mainpage}
                 alt="mainpage background"
             />
-            </div>
+            </div> */}
 
             <div className="main-nav">
                 <div className="logo">ANIFLIX</div>

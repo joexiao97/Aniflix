@@ -1,15 +1,18 @@
 # == Schema Information
 #
-# Table name: genres
+# Table name: showgenres
 #
 #  id         :bigint           not null, primary key
-#  type       :string           not null
+#  show_id    :integer
+#  genre_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 one:
-  type: 
+  show_id: 1
+  genre_id: 1
 
 two:
-  type: 
+  show_id: 1
+  genre_id: 1

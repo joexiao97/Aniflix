@@ -6,12 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Show.destroy_all
 User.destroy_all
+Show.destroy_all
+Genre.destroy_all
 
 joexiao97 = User.create!(username: "joexiao97", password:"password", email:"joexiao97@aniflix.com")
 demo_user = User.create!(username: "demouser", password:"password123",email:"demouser@aniflix.com")
 
+
+### Genres
+
+action = Genre.create!(type: "action");
+adventure = Genre.create!(type: "adventure");
+comedy = Genre.create!(type: "comedy");
+drama = Genre.create!(type: "drama");
+fantasy = Genre.create!(type: "fantasy");
+horror = Genre.create!(type: "horror");
+isekai = Genre.create!(type: "isekai");
+magic = Genre.create!(type: "magic");
+mystery = Genre.create!(type: "mystery");
+shounen = Genre.create!(type: "shounen");
+sport = Genre.create!(type: "sport");
+thriller = Genre.create!(type: "thriller");
 
 ### SHOWS ###
 #  title        :string           not null
@@ -23,6 +39,9 @@ demo_user = User.create!(username: "demouser", password:"password123",email:"dem
 #  ratings      :integer
 #  cast         :string           not null
 
+### Shows
+
+## Hunter x Hunter
 hunterxhunter = Show.create!(
     title: "Hunter x Hunter",
     description: "Gon becomes a Hunter to find his father",
@@ -35,3 +54,8 @@ hunterxhunter = Show.create!(
 
 hunterxhunter.picture.attach(io: open('https://aniflix-dev.s3.amazonaws.com/hunterxhunter.jpg'), filename:'hunterxhunter.jpg')
 hunterxhunter.video.attach(io: open('https://aniflix-dev.s3.amazonaws.com/hunterxhunter.mp4'), filename:'hunterxhunter.mp4')
+
+## 
+
+
+

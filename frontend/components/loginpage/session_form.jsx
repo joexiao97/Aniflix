@@ -39,14 +39,16 @@ class SessionForm extends React.Component {
             return (
                 <>
 
-                    <img
+                    {/* <img
                         src={window.mainpage}
                         alt="mainpage background"
                         className="mainpage-background"
-                    />
-
+                    /> */}
+                    <div className="main">
+                    
+                    <div className="main-nav">
                     <Link className="logo hover-box" to="/" >ANIFLIX</Link>
-
+                    </div>
                     <div className="sign-in-box">
                         <header className="sign-in-logo">Sign In</header>
 
@@ -71,6 +73,7 @@ class SessionForm extends React.Component {
                             <Link className="sign-up-btn-text hover-box" to="/signup" >Sign Up</Link>
                         </div>
 
+                    </div>
                     </div>
                 </>
             )
