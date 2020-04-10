@@ -11,6 +11,11 @@ class Homepage extends React.Component{
         this.handleLogout = this.handleLogout.bind(this);
     }
 
+    componentDidMount(){
+        this.props.requestAllShows();
+        // document.getElementById('home-vid').play();
+    }
+
     handleLogout(e) {
         e.preventDefault();
         this.props.logout();
@@ -23,11 +28,7 @@ class Homepage extends React.Component{
     render(){
         return (
             <>
-            {/* <header className="homepage">
-                <div>
-                    <h1>Testing Homepage</h1>
-                </div>
-            </header> */}
+        <div className="homepage-browse">
             <div className="nav-bar">
                 <div className="left-bar">
                     <div className="nav-sub-btns">
@@ -43,14 +44,22 @@ class Homepage extends React.Component{
                     <Link className="logout-btn hover-box" onClick={this.handleLogout} to="/">Log Out</Link>
 
                 </div>
-            </div>
-
-            <div className="homepage-browse">
-
-
 
             </div>
+            
+            <div className="home-show-display">
+                    {this.props.shows.map((show, i) => (
+                        <>
+                            <video className="home-vid" muted width="100%" height="100%" src={show.video} type="video/mp4" autoPlay>
+                            </video>
 
+                            {/* <img className="home-pic-display" src={show.picture} alt="" />
+                            <h1 className="show-title" key={i}>{show.title}</h1> */}
+                        </>
+                    ))}
+            </div>
+        </div>
+                
             </>
         );
     }

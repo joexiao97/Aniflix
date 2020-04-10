@@ -6,7 +6,7 @@
 #  title        :string           not null
 #  description  :string
 #  genres       :string           not null
-#  type         :string           not null
+#  show_type    :string           not null
 #  runtime      :integer          not null
 #  release_date :date             not null
 #  ratings      :integer

@@ -1,6 +1,25 @@
-.homepage-browse{
+/* .home-show-display{
     width: 100%;
-    height: 100%;
-    position: fixed;
+    height: 600px;
+    position: absolute;
+    padding-top: 0px;
+} */
+.homepage-browse{
+    height: 1500px;
     background-color:rgb(15,15,15);
 }
+
+.home-show-display{
+    display: block;
+    width: 100%;
+    height: 600px;
+    position: absolute;
+}
+
+.home-vid{
+    object-fit: cover;
+}
+
+
+
+ 

@@ -1,9 +1,12 @@
 .nav-bar{
     display: flex;
+    position: sticky;
+    width: 100%;
     background-color:rgb(20,20,20);
     align-items: center;
     justify-content: space-between;
     padding: 15px 0px;
+    z-index: 100;
 }
 
 .nav-sub-btns{

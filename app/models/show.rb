@@ -6,7 +6,7 @@
 #  title        :string           not null
 #  description  :string
 #  genres       :string           not null
-#  type         :string           not null
+#  show_type    :string           not null
 #  runtime      :integer          not null
 #  release_date :date             not null
 #  ratings      :integer
@@ -15,7 +15,7 @@
 #  updated_at   :datetime         not null
 #
 class Show < ApplicationRecord
-    validates :title, :genres, :type, :runtime, :cast, presence: true
+    validates :title, :genres, :show_type, :runtime, :cast, presence: true
 
     has_one_attached :picture
     has_one_attached :video
