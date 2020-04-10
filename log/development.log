@@ -16202,3 +16202,205 @@ Processing by Api::ShowsController#index as JSON
 Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 4.7ms)
 
 
+Started GET "/" for ::1 at 2020-04-10 13:51:44 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Mz6Pa-Uw1bnDuMaYcDASJQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (5.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (75.9ms)
+Completed 200 OK in 242ms (Views: 234.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/shows" for ::1 at 2020-04-10 13:51:45 -0400
+Processing by Api::ShowsController#index as JSON
+  Rendering api/shows/index.json.jbuilder
+  [1m[36mShow Load (2.0ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/views/api/shows/index.json.jbuilder:5
+  [1m[36mActiveStorage::Attachment Load (6.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Show"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/api/shows/index.json.jbuilder:7
+  [1m[36mActiveStorage::Blob Load (11.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/shows/index.json.jbuilder:7
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Show"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/shows/index.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/shows/index.json.jbuilder:8
+  Rendered api/shows/index.json.jbuilder (51.4ms)
+Completed 200 OK in 68ms (Views: 44.5ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8a1e11a10667bdb89ef77a8abc02cc6a30d44c1a/hunterxhunter.mp4" for ::1 at 2020-04-10 13:51:45 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8a1e11a10667bdb89ef77a8abc02cc6a30d44c1a", "filename"=>"hunterxhunter"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/Joe/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (19.0ms) [0m[34mGenerated URL for file at key: SjJQ2CvTahsKDVQGs3d2XMQc (https://aniflix-dev.s3.amazonaws.com/SjJQ2CvTahsKDVQGs3d2XMQc?response-content-disposition=attachment%3B%20filename%3D%22hunterxhunter.mp4%22%3B%20filename%2A%3DUTF-8%27%27hunterxhunter.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ5DQRKSMM2BOD5S4%2F20200410%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200410T175145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b50cb84bda205750dc99252727a979132c56f9260c008816aadf31964de35032)[0m
+Redirected to https://aniflix-dev.s3.amazonaws.com/SjJQ2CvTahsKDVQGs3d2XMQc?response-content-disposition=attachment%3B%20filename%3D%22hunterxhunter.mp4%22%3B%20filename%2A%3DUTF-8%27%27hunterxhunter.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ5DQRKSMM2BOD5S4%2F20200410%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200410T175145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b50cb84bda205750dc99252727a979132c56f9260c008816aadf31964de35032
+Completed 302 Found in 28ms (ActiveRecord: 0.7ms)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mShow Load (0.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mShow Destroy (0.6ms)[0m  [1m[31mDELETE FROM "shows" WHERE "shows"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:9
+  [1m[35m (32.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Show"], ["name", "video"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:9
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d] Performing ActiveStorage::PurgeJob (Job ID: 0dba088b-72a5-412f-977a-004dad0a650d) from Inline(default) with arguments: #<GlobalID:0x00007faca425d430 @uri=#<URI::GID gid://aniflix/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d]   [1m[36mActiveStorage::Attachment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d]   [1m[36mActiveStorage::Blob Destroy (0.9ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d]   [1m[35m (38.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d] [36m  S3 Storage (182.7ms) [0m[31mDeleted file from key: SjJQ2CvTahsKDVQGs3d2XMQc[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0dba088b-72a5-412f-977a-004dad0a650d] Performed ActiveStorage::PurgeJob (Job ID: 0dba088b-72a5-412f-977a-004dad0a650d) from Inline(default) in 241.51ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 0dba088b-72a5-412f-977a-004dad0a650d) to Inline(default) with arguments: #<GlobalID:0x00007faca4cd0a70 @uri=#<URI::GID gid://aniflix/ActiveStorage::Blob/4>>
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Show"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2] Performing ActiveStorage::PurgeJob (Job ID: e2fcc868-f36d-4471-94bf-29e5a85d5de2) from Inline(default) with arguments: #<GlobalID:0x00007faca4cbabd0 @uri=#<URI::GID gid://aniflix/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2]   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2]   [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2]   [1m[36mActiveStorage::Blob Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 3]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2]   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2]   ↳ db/seeds.rb:9
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2] [36m  S3 Storage (35.8ms) [0m[31mDeleted file from key: VUE8dy7HY3KiNaXQAV7ix7YX[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2] [36m  S3 Storage (34.7ms) [0m[31mDeleted files by key prefix: variants/VUE8dy7HY3KiNaXQAV7ix7YX/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e2fcc868-f36d-4471-94bf-29e5a85d5de2] Performed ActiveStorage::PurgeJob (Job ID: e2fcc868-f36d-4471-94bf-29e5a85d5de2) from Inline(default) in 76.08ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: e2fcc868-f36d-4471-94bf-29e5a85d5de2) to Inline(default) with arguments: #<GlobalID:0x00007faca4c16580 @uri=#<URI::GID gid://aniflix/ActiveStorage::Blob/3>>
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 40]]
+  ↳ db/seeds.rb:10
+  [1m[35m (25.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 41]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "joexiao97"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "joexiao97@aniflix.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "joexiao97"], ["email", "joexiao97@aniflix.com"], ["password_digest", "$2a$12$6P7RQk0YDfIyeon5mUTpBOtl1XLDcL5qX1aGiirSWHtaDwbE3J0O."], ["session_token", "MKCb8n468TtcBJSkbSLEGA"], ["created_at", "2020-04-10 17:59:07.219304"], ["updated_at", "2020-04-10 17:59:07.219304"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demouser"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@aniflix.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "demouser"], ["email", "demouser@aniflix.com"], ["password_digest", "$2a$12$KRWJvqjFqS5lEeXyMZWOpe7KH86kWTtDqHB6a02zNNSee/6gMvaRy"], ["session_token", "7qlax-MAi5SI5pzGuW7mIQ"], ["created_at", "2020-04-10 17:59:07.471595"], ["updated_at", "2020-04-10 17:59:07.471595"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mShow Create (0.5ms)[0m  [1m[32mINSERT INTO "shows" ("title", "description", "show_type", "runtime", "release_date", "ratings", "cast", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Hunter x Hunter"], ["description", "Gon becomes a Hunter to find his father"], ["show_type", "tvshow"], ["runtime", 2], ["release_date", "2011-10-02"], ["ratings", 10], ["cast", "joe-placeholder"], ["created_at", "2020-04-10 17:59:07.475137"], ["updated_at", "2020-04-10 17:59:07.475137"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Show"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+[36m  S3 Storage (305.1ms) [0m[32mUploaded file to key: eWbh8rW9hbe9zWF2XThwNwcb (checksum: NcpOebcNvg/jmQ16nBLLNA==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "eWbh8rW9hbe9zWF2XThwNwcb"], ["filename", "hunterxhunter.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 409686], ["checksum", "NcpOebcNvg/jmQ16nBLLNA=="], ["created_at", "2020-04-10 17:59:08.086927"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mActiveStorage::Attachment Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "picture"], ["record_type", "Show"], ["record_id", 7], ["blob_id", 5], ["created_at", "2020-04-10 17:59:08.090505"]]
+  ↳ db/seeds.rb:36
+  [1m[36mShow Update (0.8ms)[0m  [1m[33mUPDATE "shows" SET "updated_at" = $1 WHERE "shows"."id" = $2[0m  [["updated_at", "2020-04-10 17:59:08.092931"], ["id", 7]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:36
+[ActiveJob] [ActiveStorage::AnalyzeJob] [460a0ff4-9b6b-410f-ac5c-e79c5d1c715e] Performing ActiveStorage::AnalyzeJob (Job ID: 460a0ff4-9b6b-410f-ac5c-e79c5d1c715e) from Inline(default) with arguments: #<GlobalID:0x00007faca492e5c0 @uri=#<URI::GID gid://aniflix/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [460a0ff4-9b6b-410f-ac5c-e79c5d1c715e] [36m  S3 Storage (134.3ms) [0m[34mDownloaded file from key: eWbh8rW9hbe9zWF2XThwNwcb[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [460a0ff4-9b6b-410f-ac5c-e79c5d1c715e] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [460a0ff4-9b6b-410f-ac5c-e79c5d1c715e]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [460a0ff4-9b6b-410f-ac5c-e79c5d1c715e]   ↳ db/seeds.rb:36
+[ActiveJob] [ActiveStorage::AnalyzeJob] [460a0ff4-9b6b-410f-ac5c-e79c5d1c715e]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [460a0ff4-9b6b-410f-ac5c-e79c5d1c715e]   ↳ db/seeds.rb:36
+[ActiveJob] [ActiveStorage::AnalyzeJob] [460a0ff4-9b6b-410f-ac5c-e79c5d1c715e]   [1m[35m (22.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [460a0ff4-9b6b-410f-ac5c-e79c5d1c715e]   ↳ db/seeds.rb:36
+[ActiveJob] [ActiveStorage::AnalyzeJob] [460a0ff4-9b6b-410f-ac5c-e79c5d1c715e] Performed ActiveStorage::AnalyzeJob (Job ID: 460a0ff4-9b6b-410f-ac5c-e79c5d1c715e) from Inline(default) in 167.45ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 460a0ff4-9b6b-410f-ac5c-e79c5d1c715e) to Inline(default) with arguments: #<GlobalID:0x00007faca12bd9f0 @uri=#<URI::GID gid://aniflix/ActiveStorage::Blob/5>>
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Show"], ["name", "video"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+[36m  S3 Storage (4576.4ms) [0m[32mUploaded file to key: pDYGmxTy8KAuCZ4wcEqTipUu (checksum: JARaeK9zMsOs7CU0IYxstA==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "pDYGmxTy8KAuCZ4wcEqTipUu"], ["filename", "hunterxhunter.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 14669578], ["checksum", "JARaeK9zMsOs7CU0IYxstA=="], ["created_at", "2020-04-10 17:59:13.717932"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video"], ["record_type", "Show"], ["record_id", 7], ["blob_id", 6], ["created_at", "2020-04-10 17:59:13.722079"]]
+  ↳ db/seeds.rb:37
+  [1m[36mShow Update (0.6ms)[0m  [1m[33mUPDATE "shows" SET "updated_at" = $1 WHERE "shows"."id" = $2[0m  [["updated_at", "2020-04-10 17:59:13.723561"], ["id", 7]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d071376-0f2e-4058-a99d-439184d4cb39] Performing ActiveStorage::AnalyzeJob (Job ID: 1d071376-0f2e-4058-a99d-439184d4cb39) from Inline(default) with arguments: #<GlobalID:0x00007faca12ce958 @uri=#<URI::GID gid://aniflix/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d071376-0f2e-4058-a99d-439184d4cb39] [36m  S3 Storage (690.3ms) [0m[34mDownloaded file from key: pDYGmxTy8KAuCZ4wcEqTipUu[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d071376-0f2e-4058-a99d-439184d4cb39] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d071376-0f2e-4058-a99d-439184d4cb39]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d071376-0f2e-4058-a99d-439184d4cb39]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d071376-0f2e-4058-a99d-439184d4cb39]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d071376-0f2e-4058-a99d-439184d4cb39]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d071376-0f2e-4058-a99d-439184d4cb39]   [1m[35m (61.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d071376-0f2e-4058-a99d-439184d4cb39]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d071376-0f2e-4058-a99d-439184d4cb39] Performed ActiveStorage::AnalyzeJob (Job ID: 1d071376-0f2e-4058-a99d-439184d4cb39) from Inline(default) in 782.14ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 1d071376-0f2e-4058-a99d-439184d4cb39) to Inline(default) with arguments: #<GlobalID:0x00007faca4e44b90 @uri=#<URI::GID gid://aniflix/ActiveStorage::Blob/6>>
