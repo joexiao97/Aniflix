@@ -18,4 +18,6 @@ class Show < ApplicationRecord
 
     has_one_attached :picture
     has_one_attached :video
+
+    has_many :showgenres
 end

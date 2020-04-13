@@ -21,4 +21,4 @@ export const requestAllShows = () => dispatch => (
 export const requestShow = (showId) => dispatch => (
     ShowAPIUtil.fetchShow(showId)
     .then((show) => dispatch(receiveShow(show)))
-)
+);

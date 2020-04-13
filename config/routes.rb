@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
     resource :session, only: [:create, :destroy]
 
-    resources :shows, only: [:index,:show]
+    resources :shows, only: [:index, :show]
 
+    resources :genres, only: [:index, :show]
   end
 
 

@@ -12,8 +12,9 @@ class Homepage extends React.Component{
     }
 
     componentDidMount(){
-        this.props.requestAllShows();
-        // document.getElementById('home-vid').play();
+
+        this.props.requestAllShows().then(() =>
+        this.props.requestAllGenres());
     }
 
     handleLogout(e) {
@@ -26,6 +27,10 @@ class Homepage extends React.Component{
     }
 
     render(){
+        if(this.props.genres.length === 0 || this.props.shows.length === 0 || !this.props.shows){
+            return(<div></div>);
+        }
+
         return (
             <>
         <div className="homepage-browse">
@@ -37,28 +42,48 @@ class Homepage extends React.Component{
                             <Link className="nav-tv-shows hover-box nav-sub-c" onCLick={this.handleSelected()} to="/browse" >TV Shows</Link>
                             <Link className="nav-movies hover-box nav-sub-c" onCLick={this.handleSelected()} to="/browse" >Movies</Link>
                             <Link className="nav-mylist hover-box nav-sub-c" onCLick={this.handleSelected()} to="/my-list" >My List</Link>
+                    
                     </div>
                 </div>
 
                 <div className="right-bar">
                     <Link className="logout-btn hover-box" onClick={this.handleLogout} to="/">Log Out</Link>
-
                 </div>
 
             </div>
             
             <div className="home-show-display">
-                    {this.props.shows.map((show, i) => (
+                    {/* {Object.values(this.props.shows).map((show, i) => (
                         <>
                             <video className="home-vid" muted width="100%" height="100%" src={show.video} type="video/mp4" autoPlay>
                             </video>
-
-                            {/* <img className="home-pic-display" src={show.picture} alt="" />
-                            <h1 className="show-title" key={i}>{show.title}</h1> */}
                         </>
-                    ))}
+                    ))} */}
+                    {/* <video className="home-vid" muted width="100%" height="100%" src={this.state.randomShow.video} type="video/mp4" autoPlay></video> */}
             </div>
+
+            <div className="shows-by-genres-display">
+
+                {this.props.genres.map((genre, i) => (
+                    <div className="genre-tag" key={i} >{genre.genre_type}
+                        <div className="shows-under-genre">
+                            <div className="show-list">
+                               <div className="show">
+                                    {genre.showsid.map((id) => (
+                                        <img className="show-picture" src={this.props.shows[id].picture } alt=""/>
+                                    ))}
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                ))}
+                
+            </div>
+
+
         </div>
+        {/* <img className="home-pic-display" src={show.picture} alt="" />
+        <h1 className="show-title" key={i}>{show.title}</h1> */}
                 
             </>
         );

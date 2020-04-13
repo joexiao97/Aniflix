@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_10_192600) do
+ActiveRecord::Schema.define(version: 2020_04_11_213833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 2020_04_10_192600) do
   end
 
   create_table "genres", force: :cascade do |t|
-    t.string "type", null: false
+    t.string "genre_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["type"], name: "index_genres_on_type", unique: true
+    t.index ["genre_type"], name: "index_genres_on_genre_type", unique: true
   end
 
   create_table "mylists", force: :cascade do |t|

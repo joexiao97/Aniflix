@@ -8,6 +8,12 @@
 #  updated_at :datetime         not null
 #
 class Genre < ApplicationRecord
-    validates :type, presence: true;
+    validates :genre_type, presence: true;
+
+    has_many :showgenres
+
+    has_many :shows_under_genre,
+        through: :showgenres,
+        source: :show
 
 end

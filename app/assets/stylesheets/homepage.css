@@ -6,14 +6,14 @@
 } */
 
 .homepage-browse{
-    height: 1500px;
+    /* height: 1500px; */
     background-color:rgb(15,15,15);
 }
 
 .home-show-display{
     display: block;
     width: 100%;
-    height: 600px;
+    /* height: 600px; */
     position: relative;
 }
 
@@ -22,6 +22,40 @@
     margin-top: 60px;
 }
 
+.shows-by-genres-display{
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-left: 50px;
+}
 
+.shows-under-genre{
+    height: 200px;
 
- 
+}
+
+.genre-tag{
+    display: inline;
+    color: white;
+    font-size: 30px;
+}
+
+.show-list{
+    display: flex;
+    height: 100%;
+}
+
+.show{
+    position: relative;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    ;
+}
+
+.show-picture{
+    display: block;
+    height: 100%;
+    object-fit: fill;
+    margin-right: 10px;
+}

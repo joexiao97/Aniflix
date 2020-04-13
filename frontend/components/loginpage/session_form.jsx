@@ -81,13 +81,8 @@ class SessionForm extends React.Component {
 
         if (this.props.formType === "signup") {
             return (
-                <>
-                    <img
-                        src={window.mainpage}
-                        alt="mainpage background"
-                        className="mainpage-background"
-                    />
-
+                <div className="main">
+                
                     <Link className="logo hover-box" to="/" >ANIFLIX</Link>
                     <div className="sign-up-box">
                         <header className="sign-up-logo">Sign Up</header>
@@ -117,7 +112,7 @@ class SessionForm extends React.Component {
                         </div>
 
                     </div>
-                </>
+                </div>
             )
         }
 
