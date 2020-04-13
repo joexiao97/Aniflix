@@ -30,7 +30,7 @@ class Homepage extends React.Component{
         if(this.props.genres.length === 0 || this.props.shows.length === 0 || !this.props.shows){
             return(<div></div>);
         }
-
+        debugger
         return (
             <>
         <div className="homepage-browse">
@@ -59,7 +59,8 @@ class Homepage extends React.Component{
                             </video>
                         </>
                     ))} */}
-                    {/* <video className="home-vid" muted width="100%" height="100%" src={this.state.randomShow.video} type="video/mp4" autoPlay></video> */}
+                        <video className="home-vid" muted width="100%" height="100%" src={Object.values(this.props.shows)[Math.floor(Math.random() * Object.values(this.props.shows).length - 1)].video} type="video/mp4" autoPlay>
+                    </video>
             </div>
 
             <div className="shows-by-genres-display">
