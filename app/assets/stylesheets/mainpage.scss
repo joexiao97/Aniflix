@@ -1,10 +1,11 @@
 .main{
+    position: relative;
     background-size: cover;
-    height: 100vh;
+    height: 120vh;
     background-image: image-url('aniflixpic.jpg');
 }
     
-    .mainpage-background{
+.mainpage-background{
     position: fixed;
     width: 100%;
     z-index: -1; 
@@ -33,6 +34,7 @@
     align-items: center;
     flex-direction: column;
     margin-top: 150px;
+    font-family: sans-serif;
 
     /* width: 500px; */
 }
@@ -65,6 +67,7 @@
     /* background-color: blue; */
     color: red;
     font-size: 50px;
+    font-family: sans-serif
 }
 
 .login-button{
@@ -78,6 +81,7 @@
     right: 15px;
     top: 20px;
     border-radius: 5px;
+    font-family: sans-serif;
 }
 
 .demo-user-button{
@@ -90,4 +94,5 @@
     text-align: center;
     padding: 15px 0px;
     margin-top: 20px;
+    font-family: sans-serif;
 }

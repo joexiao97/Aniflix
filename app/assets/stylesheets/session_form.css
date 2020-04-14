@@ -11,6 +11,7 @@
     widows: 50px;
     padding: 50px;
     flex-basis: 0;
+    font-family: sans-serif;
 }
 
 
@@ -68,4 +69,20 @@
 .sign-in-session{
     padding-top: 35px;
     display: flex;
+}
+
+.demo-user-button-log-in-session{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: red;
+    text-align: center;
+    padding: 15px 0px;
+    margin-top: 20px;
+    font-family: sans-serif;
+    margin-left: 43vw;
 }

@@ -1,0 +1,98 @@
+/* MAINPAGE FOOTER */
+
+.footer-mainpage{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    border-top: 8px solid darkgray;
+    background-color: black;
+}
+
+.footer-mainpage > .footer-link-icons{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+
+.footer-mainpage > .contact{
+    color: gray;
+    margin-top: 10px;
+}
+
+.footer-mainpage > ul{
+    margin-top: 18px;
+    margin-left: 80px;
+    display: block;
+}
+
+.footer-mainpage > ul > li{
+    color: gray;
+    margin-bottom: 5px;
+}
+
+/* LOG-SIGN FOOTER */
+
+.footer-log-sign{
+    /* display: block; */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
+    background: rgba(0,0,0,0.68);
+}
+
+.footer-log-sign > .footer-link-icons{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+
+.footer-log-sign > .contact{
+    color: gray;
+    margin-top: 10px;
+}
+
+.footer-log-sign > ul{
+    margin-top: 18px;
+    margin-left: 80px;
+    display: block;
+}
+
+.footer-log-sign > ul > li{
+    color: gray;
+    margin-bottom: 5px;
+}
+
+/* HOMEPAGE FOOTER */
+
+.footer-homepage{
+    /* display: block; */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
+    background-color: inherit;
+}
+
+.footer-homepage > .footer-link-icons{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+
+.footer-homepage > .contact{
+    color: gray;
+    margin-top: 10px;
+}
+
+.footer-homepage > ul{
+    margin-top: 18px;
+    margin-left: 80px;
+    display: block;
+}
+
+.footer-homepage > ul > li{
+    color: gray;
+    margin-bottom: 5px;
+}

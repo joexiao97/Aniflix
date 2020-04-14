@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Footer from "../../footers/footer-mainpage";
 
 class Mainpage extends React.Component{
 
@@ -45,6 +46,7 @@ class Mainpage extends React.Component{
             </main>
             
             </div>
+            <Footer />
             </>
         )
     }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../../footers/footer-homepage";
 
 class Homepage extends React.Component{
 
@@ -9,6 +10,7 @@ class Homepage extends React.Component{
             selected: false,
         }
         this.handleLogout = this.handleLogout.bind(this);
+        // this.onHoverPlay = this.onHoverPlay.bind(this);
     }
 
     componentDidMount(){
@@ -26,11 +28,19 @@ class Homepage extends React.Component{
         e => e.target.classList.add(" selected-nav")
     }
 
+    onHoverPlay(e){
+        e.currentTarget.play();
+    }
+
+    onLeave(e){
+        e.currentTarget.pause();
+        e.currentTarget.currentTime = 0;
+    }
+
     render(){
         if(this.props.genres.length === 0 || this.props.shows.length === 0 || !this.props.shows){
             return(<div></div>);
         }
-        debugger
         return (
             <>
         <div className="homepage-browse">
@@ -53,13 +63,7 @@ class Homepage extends React.Component{
             </div>
             
             <div className="home-show-display">
-                    {/* {Object.values(this.props.shows).map((show, i) => (
-                        <>
-                            <video className="home-vid" muted width="100%" height="100%" src={show.video} type="video/mp4" autoPlay>
-                            </video>
-                        </>
-                    ))} */}
-                        <video className="home-vid" muted width="100%" height="100%" src={Object.values(this.props.shows)[Math.floor(Math.random() * Object.values(this.props.shows).length - 1)].video} type="video/mp4" autoPlay>
+                    <video className="home-vid" muted width="100%" height="100%" src={Object.values(this.props.shows)[Math.floor(Math.random() * Object.values(this.props.shows).length - 1)].video} type="video/mp4" autoPlay>
                     </video>
             </div>
 
@@ -67,25 +71,26 @@ class Homepage extends React.Component{
 
                 {this.props.genres.map((genre, i) => (
                     <div className="genre-tag" key={i} >{genre.genre_type}
-                        <div className="shows-under-genre">
+                        {/* <div className="shows-under-genre"> */}
                             <div className="show-list">
-                               <div className="show">
+                               {/* <div className="show"> */}
                                     {genre.showsid.map((id) => (
-                                        <img className="show-picture" src={this.props.shows[id].picture } alt=""/>
+                                        <div className="show-pic-vid">
+                                            <img className="show-picture" src={this.props.shows[id].picture } alt=""/>
+                                            <video className="show-vid" muted width="100%" height="100%" src={this.props.shows[id].video}
+                                                type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}>
+                                            </video>
+                                        </div>
                                     ))}
-                                </div>
-                            </div> 
+                                {/* </div> */}
+                            {/* </div>  */}
                         </div>
                     </div>
                 ))}
                 
             </div>
 
-
-        </div>
-        {/* <img className="home-pic-display" src={show.picture} alt="" />
-        <h1 className="show-title" key={i}>{show.title}</h1> */}
-                
+        </div>  
             </>
         );
     }

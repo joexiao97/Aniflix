@@ -7,6 +7,7 @@
 
 .homepage-browse{
     /* height: 1500px; */
+    position: relative;
     background-color:rgb(15,15,15);
 }
 
@@ -20,6 +21,7 @@
 .home-vid{
     object-fit: cover;
     margin-top: 60px;
+    max-height: 85vh;
 }
 
 .shows-by-genres-display{
@@ -27,35 +29,62 @@
     flex-direction: column;
     padding-top: 100px;
     padding-left: 50px;
+    padding-bottom: 100px;
 }
 
-.shows-under-genre{
+/* .shows-under-genre{
     height: 200px;
-
-}
+} */
 
 .genre-tag{
     display: inline;
     color: white;
     font-size: 30px;
+    overflow-x: hidden;
 }
 
 .show-list{
     display: flex;
-    height: 100%;
+    position: relative;
+    height: 25vh;
+    width: 100vw;
 }
 
-.show{
+/* .show{
     position: relative;
     height: 100%;
     width: 20%;
     display: flex;
-    ;
-}
+} */
 
 .show-picture{
+    position: absolute;
+    height: 100%;
+    object-fit: fill;
+    margin-right: 10px;
+}
+
+.show-vid{
     display: block;
     height: 100%;
     object-fit: fill;
     margin-right: 10px;
+}
+
+.show-pic-vid:hover .show-picture{
+    display: none;
+}
+
+.show-pic-vid:hover{
+    width: 25%;
+    height: 125%;
+}
+
+.show-pic-vid{
+    position: relative;
+    width: 20%;
+    display: block;
+    margin-right: 10px;
+    height: 100%;
+    object-fit: fill;
 }
