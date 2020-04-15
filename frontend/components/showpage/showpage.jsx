@@ -14,8 +14,9 @@ class Showpage extends React.Component {
 
         return(
             <>
-                <h1>This is the showpage</h1>
-                {this.props.show.title}
+                <video className="selectedShow" autoPlay={true} width="100%" height="100%" src={this.props.show.video}
+                    type="video/mp4" controls={true} >
+                </video>
             </>
         )
     }

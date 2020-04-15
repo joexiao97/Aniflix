@@ -30,10 +30,6 @@ class Homepage extends React.Component{
         e.currentTarget.play();
     }
 
-    handleShowOnClick(e){
-        console.log(e.currentTarget)
-    }
-
     onLeave(e){
         e.currentTarget.pause();
         e.currentTarget.currentTime = 0;
@@ -89,8 +85,8 @@ class Homepage extends React.Component{
             </div>
             
             <div className="home-show-display">
-                    {/* <video className="home-vid" muted width="100%" height="100%" src={Object.values(this.props.shows)[Math.floor(Math.random() * Object.values(this.props.shows).length - 1)].video} type="video/mp4" autoPlay>
-                    </video> */}
+                    <video className="home-vid" muted width="100%" height="100%" src={Object.values(this.props.shows)[Math.floor(Math.random() * Object.values(this.props.shows).length - 1)].video} type="video/mp4" autoPlay>
+                    </video>
             </div>
 
             <div className="shows-by-genres-display">
@@ -99,12 +95,15 @@ class Homepage extends React.Component{
                     <div className="genre-tag" key={i} >{genre.genre_type}
                             <div className="show-list">
                             {genre.showsid.map((id) => (
-                                    <div className="show-pic-vid">
+                                <div className="show-pic-vid" >
                                         <img className="show-picture" src={this.props.shows[id].picture } alt="" key={id}/>
+                                        <Link to={`/shows/${id}`}>
                                         <video className="show-vid" muted width="100%" height="100%" src={this.props.shows[id].video}
                                             type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}
-                                            onClick={this.handleShowOnClick} key={id}>
+                                            // onClick={this.handleShowOnClick(id)}
+                                            >
                                         </video>
+                                        </Link>
                                     </div>
                                 ))}
                                 {/* {   this.showRows(genre).forEach((block) => {
