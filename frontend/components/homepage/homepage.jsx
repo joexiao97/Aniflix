@@ -90,7 +90,6 @@ class Homepage extends React.Component{
             </div>
 
             <div className="shows-by-genres-display">
-
                 {this.props.genres.map((genre, i) => (
                     <div className="genre-tag" key={i} >{genre.genre_type}
                             <div className="show-list">
@@ -99,9 +98,7 @@ class Homepage extends React.Component{
                                         <img className="show-picture" src={this.props.shows[id].picture } alt="" key={id}/>
                                         <Link to={`/shows/${id}`}>
                                         <video className="show-vid" muted width="100%" height="100%" src={this.props.shows[id].video}
-                                            type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}
-                                            // onClick={this.handleShowOnClick(id)}
-                                            >
+                                            type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}>
                                         </video>
                                         </Link>
                                     </div>
