@@ -12,6 +12,9 @@ class SessionForm extends React.Component {
             username: "",
             password: "",
             email: "",
+            emptyPassword: false,
+            emptyUsername: false,
+            emptyEmail: false,
         };
         this.errors = {};
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,8 +28,39 @@ class SessionForm extends React.Component {
 
     update(type) {
         return e => {
-            this.setState({ [type]: e.target.value })
+            this.setState({[type]: e.target.value});
+
+            if(type === "username" && this.state.username === ""){
+                this.setState({emptyUsername: true})}
+            else {
+                this.setState({ emptyUsername: false })
+            }
+
+            if(type === "password" && this.state.password === ""){
+                this.setState({emptyPassword: true})}
+            else {
+                this.setState({ emptyPassword: false })
+            }
+
+            if(type === "email" && this.state.email === ""){
+                this.setState({emptyEmail: true})}
+            else {
+                this.setState({ emptyEmail: false })
+            }
         }
+    }
+    
+    printUserError(){
+        if (this.state.emptyUsername && this.state.username.length < 1) return <h3 className="frontErrors">Please enter a valid username</h3>
+    }
+    
+    printEmailError(){
+        if (this.state.emptyEmail && this.state.email.length < 1) return <h3 className="frontErrors">Please enter a valid email</h3>
+    }
+    
+    printPWError(){
+        if(this.state.password.length === 1) return;
+        if (this.state.emptyPassword && this.state.password.length < 6) return <h3 className="frontErrors">Your password must contain 6 of more characters</h3>   
     }
 
     handleSubmit(e) {
@@ -44,15 +78,10 @@ class SessionForm extends React.Component {
 
 
     render() {
+        debugger
         if (this.props.formType === "login") {
             return (
                 <>
-
-                    {/* <img
-                        src={window.mainpage}
-                        alt="mainpage background"
-                        className="mainpage-background"
-                    /> */}
                     <div className="main">
                     
                     <div className="main-nav">
@@ -62,11 +91,14 @@ class SessionForm extends React.Component {
                         <header className="sign-in-logo">Sign In</header>
 
                         <form onSubmit={this.handleSubmit}>
-                        <label>
-                           <input className="sign-in-input" type="text" placeholder="Username" value={this.state.username} onChange={this.update("username")} />
+                        <label >
+                            <input className="sign-user" type="text" placeholder="Username" value={this.state.username} onChange={this.update("username")} onBlur={this.update("username")} />
+                            {this.printUserError()}
                         </label>
+
                         <label>
-                            <input className="sign-in-input" type="password" placeholder="Password" value={this.state.password} onChange={this.update("password")} />
+                            <input className="sign-password" type="password" placeholder="Password" value={this.state.password} onChange={this.update("password")} onBlur={this.update("password")}/>
+                            {this.printPWError()}
                         </label>
 
                         <ul className="sign-box-errors">
@@ -100,14 +132,17 @@ class SessionForm extends React.Component {
             
                         <form onSubmit={this.handleSubmit}>
                         <label>
-                            <input className="sign-in-input" type="text" placeholder="Username" value={this.state.username} onChange={this.update("username")} />
+                                    <input className="sign-user" type="text" placeholder="Username" value={this.state.username} onChange={this.update("username")} onBlur={this.update("username")}/>
                         </label>
+                            {this.printUserError()}
                         <label>
-                            <input className="sign-in-input" type="email" placeholder="Email" value={this.state.email} onChange={this.update("email")} />
+                                    <input className="sign-email" type="email" placeholder="Email" value={this.state.email} onChange={this.update("email")} onBlur={this.update("email")}/>
                         </label>
+                            {this.printEmailError()}
                         <label>
-                            <input className="sign-in-input" type="password" placeholder="Password" value={this.state.password} onChange={this.update("password")} />
+                                    <input className="sign-password" type="password" placeholder="Password" value={this.state.password} onChange={this.update("password")} onBlur={this.update("password")}/>
                         </label>
+                            {this.printPWError()}
 
                         <ul className="sign-box-errors">
                             {this.props.errors.map((error, i) => <li className="sign-error" key={i}>{error}</li>)}

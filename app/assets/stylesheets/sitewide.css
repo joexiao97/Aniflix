@@ -13,3 +13,11 @@
 .show-title{
     color: white;
 }
+
+.frontErrors{
+    color: orange;
+    position: relative;
+    margin: 0px;
+    font-size: 15px;
+    font-family: sans-serif;
+}

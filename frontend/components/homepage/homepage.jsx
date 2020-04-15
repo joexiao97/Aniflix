@@ -10,11 +10,9 @@ class Homepage extends React.Component{
             selected: false,
         }
         this.handleLogout = this.handleLogout.bind(this);
-        // this.onHoverPlay = this.onHoverPlay.bind(this);
     }
 
     componentDidMount(){
-
         this.props.requestAllShows().then(() =>
         this.props.requestAllGenres());
     }
@@ -35,6 +33,30 @@ class Homepage extends React.Component{
     onLeave(e){
         e.currentTarget.pause();
         e.currentTarget.currentTime = 0;
+    }
+
+showRows(genre){
+    // if(this.props.genres.length > 0){
+        let count = 0
+        let shows = []
+        let specShows = []
+        genre.forEach((gen) => {
+            // if(genre.showsid.length > 4){
+                gen.showsid.forEach((id) => {
+                    if(count < 4){
+                        specShows.push(id);
+                        count++;
+                    }else{
+                        shows.push(specShows);
+                        count = 0;
+                        specShows = [id];
+                    }
+                })
+            // }
+        })
+        shows.push(specShows);
+        return shows;
+    // }
     }
 
     render(){
@@ -63,27 +85,33 @@ class Homepage extends React.Component{
             </div>
             
             <div className="home-show-display">
-                    <video className="home-vid" muted width="100%" height="100%" src={Object.values(this.props.shows)[Math.floor(Math.random() * Object.values(this.props.shows).length - 1)].video} type="video/mp4" autoPlay>
-                    </video>
+                    {/* <video className="home-vid" muted width="100%" height="100%" src={Object.values(this.props.shows)[Math.floor(Math.random() * Object.values(this.props.shows).length - 1)].video} type="video/mp4" autoPlay>
+                    </video> */}
             </div>
 
             <div className="shows-by-genres-display">
 
                 {this.props.genres.map((genre, i) => (
                     <div className="genre-tag" key={i} >{genre.genre_type}
-                        {/* <div className="shows-under-genre"> */}
                             <div className="show-list">
-                               {/* <div className="show"> */}
-                                    {genre.showsid.map((id) => (
+                            {genre.showsid.map((id) => (
+                                    <div className="show-pic-vid">
+                                        <img className="show-picture" src={this.props.shows[id].picture } alt=""/>
+                                        <video className="show-vid" muted width="100%" height="100%" src={this.props.shows[id].video}
+                                            type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}>
+                                        </video>
+                                    </div>
+                                ))}
+                                {/* {   this.showRows(genre).forEach((block) => {
+                                    block.forEach((id) => (
                                         <div className="show-pic-vid">
-                                            <img className="show-picture" src={this.props.shows[id].picture } alt=""/>
+                                            <img className="show-picture" src={this.props.shows[id].picture} alt="" />
                                             <video className="show-vid" muted width="100%" height="100%" src={this.props.shows[id].video}
                                                 type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}>
                                             </video>
                                         </div>
-                                    ))}
-                                {/* </div> */}
-                            {/* </div>  */}
+                                    ))
+                                })} */}
                         </div>
                     </div>
                 ))}

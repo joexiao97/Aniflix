@@ -48,6 +48,7 @@
     position: relative;
     height: 25vh;
     width: 100vw;
+    padding-bottom: 5vh;
 }
 
 /* .show{
@@ -76,8 +77,12 @@
 }
 
 .show-pic-vid:hover{
+    display: block;
+    top: -25px;
+    z-index: 888;
     width: 25%;
-    height: 125%;
+    height: 130%;
+
 }
 
 .show-pic-vid{

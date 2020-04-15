@@ -49,7 +49,7 @@
     font-weight: 800;
     text-align: center;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 35px;
 }
 
 ::placeholder{
@@ -85,4 +85,37 @@
     margin-top: 20px;
     font-family: sans-serif;
     margin-left: 43vw;
+}
+
+.sign-user{
+    background: gray;
+    margin-left: auto;
+    margin-right: auto;
+    height: 44px;
+    width: 100%;
+    /* margin-bottom: 25px; */
+    border-radius: 4px;
+    text-align: center;
+}
+
+.sign-password{
+    background: gray;
+    margin-left: auto;
+    margin-right: auto;
+    height: 44px;
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.sign-email{
+    background: gray;
+    margin-left: auto;
+    margin-right: auto;
+    height: 44px;
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 4px;
+    text-align: center;
 }
