@@ -30,12 +30,16 @@ class Homepage extends React.Component{
         e.currentTarget.play();
     }
 
+    handleShowOnClick(e){
+        console.log(e.currentTarget)
+    }
+
     onLeave(e){
         e.currentTarget.pause();
         e.currentTarget.currentTime = 0;
     }
 
-showRows(genre){
+    showRows(genre){
     // if(this.props.genres.length > 0){
         let count = 0
         let shows = []
@@ -96,9 +100,10 @@ showRows(genre){
                             <div className="show-list">
                             {genre.showsid.map((id) => (
                                     <div className="show-pic-vid">
-                                        <img className="show-picture" src={this.props.shows[id].picture } alt=""/>
+                                        <img className="show-picture" src={this.props.shows[id].picture } alt="" key={id}/>
                                         <video className="show-vid" muted width="100%" height="100%" src={this.props.shows[id].video}
-                                            type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}>
+                                            type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}
+                                            onClick={this.handleShowOnClick} key={id}>
                                         </video>
                                     </div>
                                 ))}

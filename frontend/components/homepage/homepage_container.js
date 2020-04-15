@@ -15,7 +15,8 @@ return {
 const mapDispatchToProps = (dispatch) => ({
     logout: () => dispatch(logoutUser()),
     requestAllShows: () => dispatch(requestAllShows()),
-    requestAllGenres: () => dispatch(requestAllGenres())
+    requestAllGenres: () => dispatch(requestAllGenres()),
+    requestShow: (showId) => dispatch(requestShow(showId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Homepage);

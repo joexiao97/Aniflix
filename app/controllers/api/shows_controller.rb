@@ -6,7 +6,7 @@ class Api::ShowsController < ApplicationController
     end
 
     def show
-        @show = Show.first
+        @show = Show.find(params[:id])
         render :show
     end
 

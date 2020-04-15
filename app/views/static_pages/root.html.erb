@@ -6,6 +6,8 @@
   window.mainpage = "<%= image_url("aniflixpic.jpg") %>"
 </script>
 
+<script src="https://kit.fontawesome.com/7b5c5cd4e8.js" crossorigin="anonymous"></script>
+
 <% if logged_in? %>
 <script id="bootstrap-current-user" type="text/javascript">
 	window.currentUser = <%= render("api/users/user.json.jbuilder",
