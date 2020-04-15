@@ -60,6 +60,7 @@ class Homepage extends React.Component{
     }
 
     render(){
+        debugger
         if(this.props.genres.length === 0 || this.props.shows.length === 0 || !this.props.shows){
             return(<div></div>);
         }
@@ -85,7 +86,7 @@ class Homepage extends React.Component{
             </div>
             
             <div className="home-show-display">
-                    <video className="home-vid" muted width="100%" height="100%" src={Object.values(this.props.shows)[Math.floor(Math.random() * Object.values(this.props.shows).length - 1)].video} type="video/mp4" autoPlay>
+                        <video className="home-vid" muted width="100%" height="100%" src={this.props.shows[Object.keys(this.props.shows)[Math.floor(Math.random() * Object.keys(this.props.shows).length)]].video} type="video/mp4" autoPlay>
                     </video>
             </div>
 
