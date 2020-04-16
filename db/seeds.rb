@@ -18,19 +18,14 @@ demo_user = User.create!(username: "demouser", password:"password123",email:"dem
 
 ### Genres
 
-genre_action = Genre.create!(genre_type: "action")
-genre_adventure = Genre.create!(genre_type: "adventure")
-genre_comedy = Genre.create!(genre_type: "comedy")
-genre_drama = Genre.create!(genre_type: "drama")
-genre_fantasy = Genre.create!(genre_type: "fantasy")
-genre_romance = Genre.create!(genre_type: "romance")
-genre_horror = Genre.create!(genre_type: "horror")
-genre_isekai = Genre.create!(genre_type: "isekai")
-genre_magic = Genre.create!(genre_type: "magic")
-genre_mystery = Genre.create!(genre_type: "mystery")
-genre_shounen = Genre.create!(genre_type: "shounen")
-genre_sport = Genre.create!(genre_type: "sport")
-
+genre_action = Genre.create!(genre_type: "Action")
+genre_adventure = Genre.create!(genre_type: "Adventure")
+genre_comedy = Genre.create!(genre_type: "Comedy")
+genre_drama = Genre.create!(genre_type: "Drama")
+genre_fantasy = Genre.create!(genre_type: "Fantasy")
+genre_romance = Genre.create!(genre_type: "Romance")
+genre_magic = Genre.create!(genre_type: "Magic")
+genre_shounen = Genre.create!(genre_type: "Shounen")
 ### SHOWS ###
 #  title        :string           not null
 #  description  :string
@@ -113,7 +108,7 @@ swordArtOnline.video.attach(io: open('https://ani-flix-dev.s3.amazonaws.com/swor
 
 Showgenre.create!(show_id: swordArtOnline.id, genre_id: genre_romance.id)
 Showgenre.create!(show_id: swordArtOnline.id, genre_id: genre_adventure.id)
-Showgenre.create!(show_id: swordArtOnline.id, genre_id: genre_isekai.id)
+# Showgenre.create!(show_id: swordArtOnline.id, genre_id: genre_isekai.id)
 
 ## Kimetsu no Yaiba
 kimetsuNoYaiba = Show.create!(
@@ -166,7 +161,6 @@ Showgenre.create!(show_id: kimetsuNoYaiba.id, genre_id: genre_adventure.id)
 # haikyuu.picture.attach(io: open('https://aniflix-dev.s3.amazonaws.com/haikyuu.jpg'), filename:'haikyuu.jpg')
 # haikyuu.video.attach(io: open('https://aniflix-dev.s3.amazonaws.com/haikyuu.mp4'), filename:'haikyuu.mp4')
 
-# Showgenre.create!(show_id: haikyuu.id, genre_id: genre_sport.id)
 # Showgenre.create!(show_id: haikyuu.id, genre_id: genre_shounen.id)
 # Showgenre.create!(show_id: haikyuu.id, genre_id: genre_comedy.id)
 
@@ -202,7 +196,6 @@ Showgenre.create!(show_id: kimetsuNoYaiba.id, genre_id: genre_adventure.id)
 # kuroko.picture.attach(io: open('https://aniflix-dev.s3.amazonaws.com/kuroko.jpg'), filename:'kuroko.jpg')
 # kuroko.video.attach(io: open('https://aniflix-dev.s3.amazonaws.com/kuroko.mp4'), filename:'kuroko.mp4')
 
-# Showgenre.create!(show_id: kuroko.id, genre_id: genre_sport.id)
 # Showgenre.create!(show_id: kuroko.id, genre_id: genre_comedy.id)
 # Showgenre.create!(show_id: kuroko.id, genre_id: genre_shounen.id)
 
@@ -238,9 +231,7 @@ Showgenre.create!(show_id: kimetsuNoYaiba.id, genre_id: genre_adventure.id)
 # deathnote.picture.attach(io: open('https://aniflix-dev.s3.amazonaws.com/deathnote.jpg'), filename:'deathnote.jpg')
 # deathnote.video.attach(io: open('https://aniflix-dev.s3.amazonaws.com/deathnote.mp4'), filename:'deathnote.mp4')
 
-# Showgenre.create!(show_id: deathnote.id, genre_id: genre_horror.id)
 # Showgenre.create!(show_id: deathnote.id, genre_id: genre_drama.id)
-# Showgenre.create!(show_id: deathnote.id, genre_id: genre_mystery.id)
 
 ## Fullmetal Alchemist
 # fullmetal = Show.create!(
@@ -276,4 +267,3 @@ Showgenre.create!(show_id: kimetsuNoYaiba.id, genre_id: genre_adventure.id)
 
 # Showgenre.create!(show_id: madeinabyss.id, genre_id: genre_drama.id)
 # Showgenre.create!(show_id: madeinabyss.id, genre_id: genre_adventure.id)
-# Showgenre.create!(show_id: madeinabyss.id, genre_id: genre_mystery.id)
