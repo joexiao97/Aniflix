@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { requestAllShows} from "../../actions/show_actions";
 import ShowType from './tvshows';
+import { logoutUser } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -9,6 +10,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
+    logout: () => dispatch(logoutUser()),
     requestAllShows: () => dispatch(requestAllShows())
 });
 
