@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Showpage extends React.Component {
 
@@ -13,11 +14,18 @@ class Showpage extends React.Component {
         }
 
         return(
-            <>
+            <div className="show-vid-page">
+                <Link to={`/browse`}>
+                <div className ="back-to-browse"> 
+                    <div className="back-to-browse-icon">←
+                    <div className="back-to-browse-text">Back to Browse</div>
+                    </div>
+                </div>
+                </Link>
                 <video className="selectedShow" autoPlay={true} width="100%" height="100%" src={this.props.show.video}
                     type="video/mp4" controls={true} >
                 </video>
-            </>
+            </div>
         )
     }
 }

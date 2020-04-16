@@ -14,12 +14,12 @@
 .home-show-display{
     display: block;
     width: 100%;
-    /* height: 600px; */
+    height: 85vh;
     position: relative;
 }
 
 .home-vid{
-    object-fit: cover;
+    object-fit: fill;
     margin-top: 60px;
     max-height: 85vh;
 }
@@ -92,4 +92,28 @@
     margin-right: 10px;
     height: 100%;
     object-fit: fill;
+}
+
+.random-show-title{
+    color: white;
+    font-size: 45px;
+    font-family: fantasy;
+    position: relative;
+    bottom: 35vh;
+    margin-left: 50px;
+    width: 208px;
+    font-weight: 800;
+}
+
+.play-button{
+    position: relative;
+    bottom: 35vh;
+    margin-left: 50px;
+    font-size: 20px;
+    color: white;
+    padding: 5px;
+    width: 60px;
+    background-color: slategray;
+    border-radius: 5px;
+    cursor: pointer;
 }

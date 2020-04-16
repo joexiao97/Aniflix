@@ -1,0 +1,43 @@
+/* .back-to-browse{
+    position: relative;
+    display: flex;
+    margin: 10px;
+} */
+
+.back-to-browse{
+    position: absolute;
+    padding: 10px;
+    z-index: 888;
+    display: flex;
+    margin-left: 40px;
+    align-items: center;
+}
+
+.back-to-browse:hover{
+    cursor: pointer;
+}
+
+.back-to-browse-text{
+    display: none;
+}
+
+.back-to-browse-icon{
+    font-size: 40px;
+    font-weight: 900;
+    display: flex;
+}
+
+.back-to-browse-icon:hover > .back-to-browse-text{
+    display: flex;
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 200;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.selectedShow{
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+}

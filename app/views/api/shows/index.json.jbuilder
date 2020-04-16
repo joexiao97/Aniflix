@@ -4,7 +4,7 @@
 
 @shows.each do |show|
     json.set! show.id do
-        json.extract! show, :id, :title
+        json.extract! show, :id, :title, :show_type
         json.picture url_for(show.picture)
         json.video url_for(show.video)
     end
