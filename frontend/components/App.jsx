@@ -9,6 +9,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import homepage_container from "./homepage/homepage_container";
 import showpage_container from "./showpage/showpage_container";
 import tvshows_container from "./tvshows/tvshows_container";
+import MyList from "./mylist/mylist";
 
 
 const App = () => (
@@ -24,6 +25,7 @@ const App = () => (
         <ProtectedRoute exact path="/shows/:showId" component={showpage_container} />
         <ProtectedRoute exact path="/tvshows" component={tvshows_container} />
         <ProtectedRoute exact path="/movies" component={tvshows_container} />
+        <ProtectedRoute exact path="/my-list" component={MyList} />
     </div>
 );
 

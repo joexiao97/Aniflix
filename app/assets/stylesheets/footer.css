@@ -7,6 +7,7 @@
     height: 20vh;
     border-top: 8px solid darkgray;
     background-color: black;
+    font-family: sans-serif;
 }
 
 .footer-mainpage > .footer-link-icons{
@@ -40,6 +41,7 @@
     width: 100%;
     height: 20vh;
     background: rgba(0,0,0,0.68);
+    font-family: sans-serif;
 }
 
 .footer-log-sign > .footer-link-icons{
@@ -73,6 +75,7 @@
     width: 100%;
     height: 20vh;
     background-color: inherit;
+    font-family: sans-serif;
 }
 
 .footer-homepage > .footer-link-icons{

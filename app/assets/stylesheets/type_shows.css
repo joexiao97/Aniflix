@@ -12,10 +12,12 @@
     margin-top: 20px;
     margin-bottom: 20px;
     height: 20vh;
+    width: 20vw;
 }
 
 .type-shows-display > .show-pic-vid:hover{
     top: 0px;
-    height: 30vh;
+    height: 32vh;
+    width: 25vw;
 }
 
