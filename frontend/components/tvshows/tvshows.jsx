@@ -91,7 +91,7 @@ class ShowType extends React.Component {
                     <div className="show-pic-vid" >
                         <img className="show-picture" src={this.props.shows[showId].picture} alt="" key={showId} />
                         <Link to={`/shows/${showId}`}>
-                            <video className="show-vid" muted width="100%" height="100%" src={this.props.shows[showId].video}
+                            <video preload="none" className="show-vid" muted width="100%" height="100%" src={this.props.shows[showId].video}
                                 type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}>
                             </video>
                         </Link>
