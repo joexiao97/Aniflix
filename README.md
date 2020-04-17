@@ -3,7 +3,7 @@
 ![banner](app/assets/images/aniflixlogo.png)
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-TODO: Put more badges here.
+
 
 Aniflix is a Netflix clone based on Anime
 
