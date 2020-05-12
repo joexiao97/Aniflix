@@ -55,3 +55,19 @@
 .nav-mylist:hover{
     color: darkgray;
 }
+
+.right-bar{
+    display: flex;
+    align-items: center;
+}
+
+.search-bar-wrapper{
+    color: white;
+    padding: 5px;
+    border: 1px solid white;
+    margin-right: 10px;
+}
+
+.search-bar ::placeholder{
+    color: gray;
+}

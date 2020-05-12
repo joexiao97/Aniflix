@@ -21,3 +21,22 @@
     font-size: 15px;
     font-family: sans-serif;
 }
+
+.selected-nav{
+    color: white;
+}
+
+.empty-show-list{
+    display: table;
+    position: relative;
+    margin: 0 auto;
+    color: white;
+    top: 100px;
+    font-family: sans-serif;
+}
+
+.empty-show-list > div {
+    margin-bottom: 10px;
+}
+
+

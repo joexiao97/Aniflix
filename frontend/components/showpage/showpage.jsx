@@ -30,4 +30,4 @@ class Showpage extends React.Component {
     }
 }
 
-export default Showpage
+export default Showpage;

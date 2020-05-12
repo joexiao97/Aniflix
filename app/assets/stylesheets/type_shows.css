@@ -2,7 +2,8 @@
     display: flex;
     position: relative;
     justify-content: center;
-    margin-top: 100px;
+    top: 100px;
+    background-color:rgb(15,15,15);
     padding-bottom: 100px;
     height: auto;
     flex-wrap: wrap;
@@ -21,3 +22,8 @@
     width: 25vw;
 }
 
+.search-browse{
+    min-height: 100vh;
+    position: relative;
+    background-color:rgb(15,15,15);
+}

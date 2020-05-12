@@ -9,7 +9,7 @@ return {
     user: state.entities.user[state.session.id],
     shows: state.entities.shows,
     genres: Object.values(state.entities.genres),
-    // randomShow: state.entities.shows[Math.floor(Math.random() * state.entities.shows.length)]
+    
 }};
 
 const mapDispatchToProps = (dispatch) => ({
