@@ -10,5 +10,12 @@
 #
 class Mylist < ApplicationRecord
 
+    belongs_to :user,
+    foreign_key: :user_id,
+    class_name: :User
+
+    belongs_to :show,
+    foreign_key: :movie_id,
+    class_name: :Show
     
 end

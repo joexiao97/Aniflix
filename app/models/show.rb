@@ -20,4 +20,8 @@ class Show < ApplicationRecord
     has_one_attached :video
 
     has_many :showgenres
+
+    has_many :mylists,
+    foreign_key: :movie_id,
+    class_name: :Mylist
 end

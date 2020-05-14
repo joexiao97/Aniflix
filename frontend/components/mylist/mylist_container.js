@@ -1,6 +1,7 @@
 import { logoutUser } from "../../actions/session_actions"
 import { connect } from 'react-redux';
-import MyList from "./mylist";
+import Mylist from "./mylist";
+import { fetchMylistShows } from "../../actions/show_actions";
 
 const mapStateToProps = (state) => {
     return {
@@ -11,6 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
     logout: () => dispatch(logoutUser()),
+    fetchMylistShows: () => dispatch(fetchMylistShows()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyList);
+export default connect(mapStateToProps, mapDispatchToProps)(Mylist);

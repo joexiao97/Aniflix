@@ -9,14 +9,17 @@ class ShowType extends React.Component {
             query: "",
             isSearched: false,
         }
+        this.mounted = false;
         this.handleLogout = this.handleLogout.bind(this);
         this.handleSelected = this.handleSelected.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
     }
 
     componentDidMount(){
-        this.props.requestAllShows()
+        this.props.requestAllShows();
+        this.mounted = true;
     }
+    
 
     checkIfTvShow(){
         let tvShowIds = []
@@ -70,6 +73,7 @@ class ShowType extends React.Component {
         const randomShow = this.props.shows[tvShowIds[Math.floor(Math.random() * tvShowIds.length)]];
 
         let searchBar = <>
+            <i className="fas fa-search"></i>
             <div className="search-bar">
             <form>
                 <input
@@ -86,6 +90,9 @@ class ShowType extends React.Component {
         Object.values(this.props.shows).map((show) => {
             if (show.title.toLowerCase().includes(this.state.query.toLowerCase())) searchedShows.push(show.id)
         })
+        if (!this.mounted) {
+            return (<div className="search-browse" />)
+        }
 
         if (this.state.query === "") {
         return(

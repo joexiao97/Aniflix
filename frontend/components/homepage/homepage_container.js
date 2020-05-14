@@ -9,7 +9,7 @@ return {
     user: state.entities.user[state.session.id],
     shows: state.entities.shows,
     genres: Object.values(state.entities.genres),
-    
+
 }};
 
 const mapDispatchToProps = (dispatch) => ({

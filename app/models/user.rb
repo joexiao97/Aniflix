@@ -20,7 +20,13 @@ class User < ApplicationRecord
 
     attr_reader :password
 
-    # has_one :mylist
+    has_one :mylist,
+    foreign_key: :user_id,
+    class_name: :Mylist
+
+    has_many :my_list_shows,
+    through: :mylist,
+    source: :show
 
     #FIGVAPER
 

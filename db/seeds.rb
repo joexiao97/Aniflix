@@ -350,3 +350,8 @@ ironblooded.video.attach(io: open('https://ani-flix-dev.s3.amazonaws.com/ironblo
 
 Showgenre.create!(show_id: ironblooded.id, genre_id: genre_fantasy.id)
 Showgenre.create!(show_id: ironblooded.id, genre_id: genre_shounen.id)
+
+Mylist.create!(user_id: demo_user.id, movie_id: hunterxhunter.id)
+Mylist.create!(user_id: demo_user.id, movie_id: kimetsuNoYaiba.id)
+Mylist.create!(user_id: demo_user.id, movie_id: haikyuu.id)
+Mylist.create!(user_id: demo_user.id, movie_id: naruto.id)

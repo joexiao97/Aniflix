@@ -11,6 +11,7 @@ class Homepage extends React.Component{
             query: "",
             isSearched: false,
         }
+        this.mounted = false;
         this.handleLogout = this.handleLogout.bind(this);
         this.handleSelected = this.handleSelected.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
@@ -19,6 +20,7 @@ class Homepage extends React.Component{
     componentDidMount(){
         this.props.requestAllShows().then(() =>
         this.props.requestAllGenres());
+        this.mounted = true;
     }
 
     handleLogout(e) {
@@ -71,13 +73,17 @@ class Homepage extends React.Component{
 
     render(){
         if(this.props.genres.length === 0 || this.props.shows.length === 0 || !this.props.shows){
-            return(<div></div>);
+                return (<div className="search-browse" />)
+        }
+        if (!this.mounted) {
+            return (<div className="search-browse" />)
         }
 
         const randomShow = this.props.shows[Object.keys(this.props.shows)[Math.floor(Math.random() * Object.keys(this.props.shows).length)]];
 
         let searchBar = <>
             <div className="search-bar">
+            <i className="fas fa-search"></i>
             <form>
                 <input 
                 type="text" 
