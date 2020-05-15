@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
 
     resources :genres, only: [:index, :show]
+
+    resources :mylist, only: [:index, :create, :destroy]
   end
 
 

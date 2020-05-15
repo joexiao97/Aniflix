@@ -1,7 +1,7 @@
 import { logoutUser } from "../../actions/session_actions"
 import { connect } from 'react-redux';
 import Mylist from "./mylist";
-import { fetchMylistShows } from "../../actions/show_actions";
+import { fetchMylistShows } from "../../actions/mylist_actions";
 
 const mapStateToProps = (state) => {
     return {

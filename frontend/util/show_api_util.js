@@ -11,10 +11,3 @@ export const fetchShow = (showId) => (
         url: `/api/shows/${showId}`
     })
 )
-
-export const fetchMylistShows = () => (
-    $.ajax({
-        method: "GET",
-        url: "/api/shows/mylist"
-    })
-)

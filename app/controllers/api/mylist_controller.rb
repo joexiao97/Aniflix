@@ -1,5 +1,5 @@
 
-class Api::MyListController < ApplicationController
+class Api::MylistController < ApplicationController
     
     def index
         @my_list_shows = current_user.my_list_shows
@@ -21,7 +21,7 @@ class Api::MyListController < ApplicationController
     end 
 
     def destroy
-        my_list_show = current_user.my_list_shows.find_by(video_id: params[:id])
+        my_list_show = current_user.my_list_shows.find_by(id: params[:id])
         if my_list_show
             my_list_show.destroy
             @my_list_shows = current_user.my_list_shows 

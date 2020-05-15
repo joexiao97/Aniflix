@@ -15,11 +15,13 @@ class Homepage extends React.Component{
         this.handleLogout = this.handleLogout.bind(this);
         this.handleSelected = this.handleSelected.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
+        this.handleMyList = this.handleMyList.bind(this);
     }
 
     componentDidMount(){
         this.props.requestAllShows().then(() =>
         this.props.requestAllGenres());
+        this.props.fetchMylistShows();
         this.mounted = true;
     }
 
@@ -47,6 +49,27 @@ class Homepage extends React.Component{
         e.currentTarget.currentTime = 0;
     }
 
+    handleMyList(showId){
+        const {mylist, addShowToMyList, removeFromMyList} = this.props
+        debugger
+        return(e => {
+            debugger
+            e.preventDefault();
+            if (!Object.keys(mylist).includes(showId.toString())){
+                addShowToMyList(showId)
+            }
+            else if (Object.keys(mylist).includes(showId.toString())) {
+                removeFromMyList(showId)
+            }
+        })
+    }
+
+    showMylistBtn(showId){
+        debugger
+        if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> - </div>)
+        else return (<div className="mylistbtn"> + </div>)
+    }
+
     showRows(genre){
     // if(this.props.genres.length > 0){
         let count = 0
@@ -71,6 +94,7 @@ class Homepage extends React.Component{
     // }
     }
 
+    
     render(){
         if(this.props.genres.length === 0 || this.props.shows.length === 0 || !this.props.shows){
                 return (<div className="search-browse" />)
@@ -94,6 +118,8 @@ class Homepage extends React.Component{
             </form>
             </div>
         </>
+
+
 
         let searchedShows = [];
         Object.values(this.props.shows).map((show) => {
@@ -126,7 +152,8 @@ class Homepage extends React.Component{
             <div className="home-show-display">
                     <video className="home-vid" muted width="100%" height="100%" src={randomShow.video} type="video/mp4" autoPlay>
                     </video>
-                    <div className="random-show-title">{randomShow.title}</div>
+                    <div className="random-show-title" onClick={this.handleMyList(randomShow.id)}>{randomShow.title}</div>
+                    <button className="mylistbtn2" onClick={this.handleMyList(randomShow.id)}> {this.showMylistBtn(randomShow.id)} </button>
                     <Link to={`/shows/${randomShow.id}`}>
                     <div className="play-button">▶ Play</div>
                     </Link>

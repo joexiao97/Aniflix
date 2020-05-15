@@ -8,6 +8,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     login: (user) => dispatch(loginUser(user))
+    
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Mainpage)
