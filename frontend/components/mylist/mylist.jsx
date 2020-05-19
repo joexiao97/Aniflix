@@ -14,6 +14,7 @@ class MyList extends React.Component {
         this.handleLogout = this.handleLogout.bind(this);
         this.handleSelected = this.handleSelected.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
+        this.handleMyList = this.handleMyList.bind(this);
     }
 
     componentDidMount() {
@@ -34,6 +35,24 @@ class MyList extends React.Component {
     handleSearchChange(e) {
         e.preventDefault();
         this.setState({ query: e.currentTarget.value })
+    }
+
+    handleMyList(showId) {
+        const { mylist, addShowToMyList, removeFromMyList } = this.props
+        return (e => {
+            e.preventDefault();
+            if (!Object.keys(mylist).includes(showId.toString())) {
+                addShowToMyList(showId)
+            }
+            else if (Object.keys(mylist).includes(showId.toString())) {
+                removeFromMyList(showId)
+            }
+        })
+    }
+
+    showIndilistBtn(showId) {
+        if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> <i className="fas fa-check"></i></div>)
+        else return (<div className="mylistbtn"> <i className="fas fa-plus"></i></div>)
     }
 
     onHoverPlay(e) {
@@ -66,7 +85,6 @@ class MyList extends React.Component {
         //     return (<div className="search-browse"/>)
         // }
         // else{
-        debugger
         return(
         <div className="search-browse">
             <div className="nav-bar">
@@ -89,6 +107,7 @@ class MyList extends React.Component {
                 <div className="type-shows-display">
                     {Object.values(this.props.mylist).map((show) => (
                     <div className="show-pic-vid" key={show.id} >
+                            <button className="mylistbtn4" onClick={this.handleMyList(show.id)}> {this.showIndilistBtn(show.id)} </button>
                         <img className="show-picture" src={show.picture} alt="" />
                         <Link to={`/shows/${show.id}`}>
                             <video preload="none" className="show-vid" muted width="100%" height="100%" src={show.video}

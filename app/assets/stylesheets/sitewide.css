@@ -40,8 +40,38 @@
 }
 
 
-.mylistbtn{
-    font-size: 100px;
-    z-index: 10000;
-    color: blue;
+.mylistbtn2{
+    margin-left: 10px;
+}
+
+.show-pic-vid:hover > .mylistbtn3{
+    display: flex;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: rgba(133,133,133,0.6);
+    padding: 5px;
+    position: absolute;
+    top: 58%;
+    left: 68%;
+}
+
+.show-pic-vid > .mylistbtn3{
+    display: none;
+}
+
+.show-pic-vid:hover > .mylistbtn4{
+    display: flex;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: rgba(133,133,133,0.6);
+    padding: 5px;
+    position: absolute;
+    top: 58%;
+    left: 68%;
+    font-size: 2em;
+    color: white;
+}
+
+.show-pic-vid > .mylistbtn4{
+    display: none;
 }

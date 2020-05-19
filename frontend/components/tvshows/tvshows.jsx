@@ -13,10 +13,12 @@ class ShowType extends React.Component {
         this.handleLogout = this.handleLogout.bind(this);
         this.handleSelected = this.handleSelected.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
+        this.handleMyList = this.handleMyList.bind(this);
     }
 
     componentDidMount(){
         this.props.requestAllShows();
+        this.props.fetchMylistShows();
         this.mounted = true;
     }
     
@@ -55,6 +57,19 @@ class ShowType extends React.Component {
         this.setState({ query: e.currentTarget.value })
     }
 
+    handleMyList(showId) {
+        const { mylist, addShowToMyList, removeFromMyList } = this.props
+        return (e => {
+            e.preventDefault();
+            if (!Object.keys(mylist).includes(showId.toString())) {
+                addShowToMyList(showId)
+            }
+            else if (Object.keys(mylist).includes(showId.toString())) {
+                removeFromMyList(showId)
+            }
+        })
+    }
+
     onHoverPlay(e) {
         e.currentTarget.play();
     }
@@ -62,6 +77,16 @@ class ShowType extends React.Component {
     onLeave(e) {
         e.currentTarget.pause();
         e.currentTarget.currentTime = 0;
+    }
+
+    showMylistBtn(showId) {
+        if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> <i class="fas fa-check"></i> My List</div>)
+        else return (<div className="mylistbtn"> <i class="fas fa-plus"></i> My List</div>)
+    }
+
+    showIndilistBtn(showId) {
+        if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> <i class="fas fa-check"></i></div>)
+        else return (<div className="mylistbtn"> <i class="fas fa-plus"></i></div>)
     }
 
     render(){
@@ -116,18 +141,24 @@ class ShowType extends React.Component {
                 </div>
 
             </div>
-                <div className="home-show-display">
-                    <video className="home-vid" muted width="100%" height="100%" src={randomShow.video} type="video/mp4" autoPlay>
-                    </video>
-                    <div className="random-show-title">{randomShow.title}</div>
-                    <Link to={`/shows/${randomShow.id}`}>
+            <div className="home-show-display">
+                    <video className="home-vid" muted width="100%" height="100%" src={randomShow.video} type="video/mp4" autoPlay></video>
+
+                    <div className="home-show-info">
+                        <div className="random-show-title" onClick={this.handleMyList(randomShow.id)}>{randomShow.title}</div>
+                        <div className = "play-and-mylist">
+                        <Link to={`/shows/${randomShow.id}`}>
                         <div className="play-button">▶ Play</div>
-                    </Link>
-                </div>
+                        </Link>
+                        <button className="mylistbtn2" onClick={this.handleMyList(randomShow.id)}> {this.showMylistBtn(randomShow.id)} </button>
+                        </div>
+                    </div>
+            </div>
 
                 <div className="type-shows-display">
                 {tvShowIds.map((showId) => (
                     <div className="show-pic-vid" key={showId}>
+                        <button className="mylistbtn4" onClick={this.handleMyList(showId)}> {this.showIndilistBtn(showId)} </button>
                         <img className="show-picture" src={this.props.shows[showId].picture} alt="" />
                         <Link to={`/shows/${showId}`}>
                             <video preload="none" className="show-vid" muted width="100%" height="100%" src={this.props.shows[showId].video}
@@ -202,6 +233,7 @@ class ShowType extends React.Component {
             <div className="type-shows-display">
                 {searchedShows.map((showId) => (
                     <div className="show-pic-vid" key={showId}>
+                        <button className="mylistbtn4" onClick={this.handleMyList(id)}> {this.showIndilistBtn(id)} </button>
                         <img className="show-picture" src={this.props.shows[showId].picture} alt="" />
                         <Link to={`/shows/${showId}`}>
                             <video preload="none" className="show-vid" muted width="100%" height="100%" src={this.props.shows[showId].video}

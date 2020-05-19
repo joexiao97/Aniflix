@@ -63,8 +63,13 @@ class Homepage extends React.Component{
     }
 
     showMylistBtn(showId){
-        if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> - </div>)
-        else return (<div className="mylistbtn"> + </div>)
+        if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> <i class="fas fa-check"></i> My List</div>)
+        else return (<div className="mylistbtn"> <i class="fas fa-plus"></i> My List</div>)
+    }
+
+    showIndilistBtn(showId){
+        if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> <i class="fas fa-check"></i></div>)
+        else return (<div className="mylistbtn"> <i class="fas fa-plus"></i></div>)
     }
 
     showRows(genre){
@@ -147,13 +152,17 @@ class Homepage extends React.Component{
             </div>
             
             <div className="home-show-display">
-                    <video className="home-vid" muted width="100%" height="100%" src={randomShow.video} type="video/mp4" autoPlay>
-                    </video>
-                    <div className="random-show-title" onClick={this.handleMyList(randomShow.id)}>{randomShow.title}</div>
-                    <button className="mylistbtn2" onClick={this.handleMyList(randomShow.id)}> {this.showMylistBtn(randomShow.id)} </button>
-                    <Link to={`/shows/${randomShow.id}`}>
-                    <div className="play-button">▶ Play</div>
-                    </Link>
+                    <video className="home-vid" muted width="100%" height="100%" src={randomShow.video} type="video/mp4" autoPlay></video>
+
+                    <div className="home-show-info">
+                        <div className="random-show-title" onClick={this.handleMyList(randomShow.id)}>{randomShow.title}</div>
+                        <div className = "play-and-mylist">
+                        <Link to={`/shows/${randomShow.id}`}>
+                        <div className="play-button">▶ Play</div>
+                        </Link>
+                        <button className="mylistbtn2" onClick={this.handleMyList(randomShow.id)}> {this.showMylistBtn(randomShow.id)} </button>
+                        </div>
+                    </div>
             </div>
 
             <div className="shows-by-genres-display">
@@ -163,6 +172,7 @@ class Homepage extends React.Component{
                             {genre.showsid.map((id) => (
                                 <div className="show-pic-vid" key={id}>
                                         <img className="show-picture" src={this.props.shows[id].picture } alt=""/>
+                                    <button className="mylistbtn3" onClick={this.handleMyList(id)}> {this.showIndilistBtn(id)} </button>
                                         <Link to={`/shows/${id}`}>
                                         <video preload="none" className="show-vid" muted width="100%" height="100%" src={this.props.shows[id].video}
                                             type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}>
@@ -240,6 +250,7 @@ class Homepage extends React.Component{
             <div className="type-shows-display">
                 {searchedShows.map((showId) => (
                     <div className="show-pic-vid" key={showId} >
+                        <button className="mylistbtn3" onClick={this.handleMyList(id)}> {this.showIndilistBtn(id)} </button>
                         <img className="show-picture" src={this.props.shows[showId].picture} alt="" />
                         <Link to={`/shows/${showId}`}>
                             <video preload="none" className="show-vid" muted width="100%" height="100%" src={this.props.shows[showId].video}

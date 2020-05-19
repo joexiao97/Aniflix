@@ -14,14 +14,15 @@
 .home-show-display{
     display: block;
     width: 100%;
-    height: 85vh;
+    height: calc(88vh + 30px);
     position: relative;
 }
 
 .home-vid{
     object-fit: fill;
-    margin-top: 60px;
-    max-height: 85vh;
+    margin-top: calc(8vh + 30px);
+    height: 80vh;
+    max-height: 80vh;
 }
 
 .shows-by-genres-display{
@@ -100,21 +101,27 @@
     font-size: 45px;
     font-family: fantasy;
     position: relative;
-    bottom: 35vh;
+    bottom: 48vh;
     margin-left: 50px;
     width: 208px;
     font-weight: 800;
 }
 
-.play-button{
+.play-button, .mylistbtn2{
+    padding: 8px 22px;
+    background-color: slategray;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.play-and-mylist{
     position: relative;
-    bottom: 35vh;
+    bottom: 48vh;
     margin-left: 50px;
     font-size: 20px;
     color: white;
     padding: 5px;
-    width: 60px;
-    background-color: slategray;
-    border-radius: 5px;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
 }

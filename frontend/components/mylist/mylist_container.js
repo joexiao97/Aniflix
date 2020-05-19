@@ -1,7 +1,7 @@
 import { logoutUser } from "../../actions/session_actions"
 import { connect } from 'react-redux';
 import Mylist from "./mylist";
-import { fetchMylistShows } from "../../actions/mylist_actions";
+import { addShowToMyList, fetchMylistShows, removeFromMyList } from "../../actions/mylist_actions";
 
 const mapStateToProps = (state) => {
     debugger
@@ -13,6 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
     logout: () => dispatch(logoutUser()),
+    addShowToMyList: (showId) => dispatch(addShowToMyList(showId)),
+    removeFromMyList: (showId) => dispatch(removeFromMyList(showId)),
     fetchMylistShows: () => dispatch(fetchMylistShows()),
 });
 
