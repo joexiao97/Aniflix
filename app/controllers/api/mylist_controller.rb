@@ -21,9 +21,10 @@ class Api::MylistController < ApplicationController
     end 
 
     def destroy
-        my_list_show = current_user.my_list_shows.find_by(id: params[:id])
-        if my_list_show
-            my_list_show.destroy
+        my_list = current_user.mylist.find_by(movie_id: params[:id])
+        if my_list
+            my_list.destroy
+
             @my_list_shows = current_user.my_list_shows 
             render :index
         else

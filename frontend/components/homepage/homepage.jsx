@@ -51,9 +51,7 @@ class Homepage extends React.Component{
 
     handleMyList(showId){
         const {mylist, addShowToMyList, removeFromMyList} = this.props
-        debugger
         return(e => {
-            debugger
             e.preventDefault();
             if (!Object.keys(mylist).includes(showId.toString())){
                 addShowToMyList(showId)
@@ -65,7 +63,6 @@ class Homepage extends React.Component{
     }
 
     showMylistBtn(showId){
-        debugger
         if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> - </div>)
         else return (<div className="mylistbtn"> + </div>)
     }

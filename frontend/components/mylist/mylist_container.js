@@ -4,9 +4,10 @@ import Mylist from "./mylist";
 import { fetchMylistShows } from "../../actions/mylist_actions";
 
 const mapStateToProps = (state) => {
+    debugger
     return {
         user: state.entities.user[state.session.id],
-        shows: state.entities.shows,
+        mylist: state.entities.mylist,
     }
 };
 

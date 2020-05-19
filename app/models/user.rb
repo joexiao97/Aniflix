@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
     attr_reader :password
 
-    has_one :mylist,
+    has_many :mylist,
     foreign_key: :user_id,
     class_name: :Mylist
 

@@ -8,22 +8,22 @@ const receiveListShows = (shows) => ({
     shows
 })
 
-const receiveAllMyListShows = (shows) => ({
+const receiveAllMyListShows = (my_list_shows) => ({
     type: RECEIVE_ALL_MY_LIST_SHOWS,
-    shows
+    my_list_shows
 });
 
 export const addShowToMyList = showId => dispatch => (
     MylistApiUtil.addShowToMyList(showId)
-        .then((shows) => dispatch(receiveListShows(shows)))
+        .then((my_list_shows) => dispatch(receiveAllMyListShows(my_list_shows)))
 );
 
 export const removeFromMyList = showId => dispatch => (
     MylistApiUtil.removeFromMyList(showId)
-        .then((shows) => dispatch(receiveListShows(shows)))
+        .then((my_list_shows) => dispatch(receiveAllMyListShows(my_list_shows)))
 );
 
 export const fetchMylistShows = () => (dispatch) => (
     MylistApiUtil.fetchMylistShows()
-        .then((shows) => dispatch(receiveAllMyListShows(shows)))
+        .then((my_list_shows) => dispatch(receiveAllMyListShows(my_list_shows)))
 );

@@ -7,8 +7,6 @@ const showsReducer = (state ={}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_SHOWS:
             return Object.assign( {}, state, action.shows)
-        // case RECEIVE_ALL_MY_LIST_SHOWS:
-        //     return Object.assign({},action.shows)
         case RECEIVE_SHOW:
             return Object.assign( {}, state, {[action.show.id]: action.show})
         default:

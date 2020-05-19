@@ -59,13 +59,14 @@ class MyList extends React.Component {
                     />
                 </form>
             </div>
-            
+
         </>
 
-        if(!this.mounted){
-            return (<div className="search-browse"/>)
-        }
-        else{
+        // if(!this.mounted){
+        //     return (<div className="search-browse"/>)
+        // }
+        // else{
+        debugger
         return(
         <div className="search-browse">
             <div className="nav-bar">
@@ -86,7 +87,7 @@ class MyList extends React.Component {
             </div>
 
                 <div className="type-shows-display">
-                    {Object.values(this.props.shows).map((show) => (
+                    {Object.values(this.props.mylist).map((show) => (
                     <div className="show-pic-vid" key={show.id} >
                         <img className="show-picture" src={show.picture} alt="" />
                         <Link to={`/shows/${show.id}`}>
@@ -102,7 +103,7 @@ class MyList extends React.Component {
             </div>
         )
         }
-    }
+    // }
 
 }
 
