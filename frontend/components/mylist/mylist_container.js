@@ -4,7 +4,6 @@ import Mylist from "./mylist";
 import { addShowToMyList, fetchMylistShows, removeFromMyList } from "../../actions/mylist_actions";
 
 const mapStateToProps = (state) => {
-    debugger
     return {
         user: state.entities.user[state.session.id],
         mylist: state.entities.mylist,

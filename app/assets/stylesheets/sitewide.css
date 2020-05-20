@@ -53,6 +53,7 @@
     position: absolute;
     top: 58%;
     left: 68%;
+    z-index: 900;
 }
 
 .show-pic-vid > .mylistbtn3{
@@ -70,6 +71,7 @@
     left: 68%;
     font-size: 2em;
     color: white;
+    z-index: 900;
 }
 
 .show-pic-vid > .mylistbtn4{

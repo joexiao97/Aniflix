@@ -250,7 +250,7 @@ class Homepage extends React.Component{
             <div className="type-shows-display">
                 {searchedShows.map((showId) => (
                     <div className="show-pic-vid" key={showId} >
-                        <button className="mylistbtn3" onClick={this.handleMyList(id)}> {this.showIndilistBtn(id)} </button>
+                        <button className="mylistbtn3" onClick={this.handleMyList(showId)}> {this.showIndilistBtn(showId)} </button>
                         <img className="show-picture" src={this.props.shows[showId].picture} alt="" />
                         <Link to={`/shows/${showId}`}>
                             <video preload="none" className="show-vid" muted width="100%" height="100%" src={this.props.shows[showId].video}

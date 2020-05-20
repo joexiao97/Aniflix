@@ -81,12 +81,12 @@ class ShowType extends React.Component {
 
     showMylistBtn(showId) {
         if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> <i class="fas fa-check"></i> My List</div>)
-        else return (<div className="mylistbtn"> <i class="fas fa-plus"></i> My List</div>)
+        else return (<div className="mylistbtn"> <i className="fas fa-plus"></i> My List</div>)
     }
 
     showIndilistBtn(showId) {
         if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> <i class="fas fa-check"></i></div>)
-        else return (<div className="mylistbtn"> <i class="fas fa-plus"></i></div>)
+        else return (<div className="mylistbtn"> <i className="fas fa-plus"></i></div>)
     }
 
     render(){
@@ -158,8 +158,8 @@ class ShowType extends React.Component {
                 <div className="type-shows-display">
                 {tvShowIds.map((showId) => (
                     <div className="show-pic-vid" key={showId}>
-                        <button className="mylistbtn4" onClick={this.handleMyList(showId)}> {this.showIndilistBtn(showId)} </button>
                         <img className="show-picture" src={this.props.shows[showId].picture} alt="" />
+                            <button className="mylistbtn4" onClick={this.handleMyList(showId)}> {this.showIndilistBtn(showId)} </button>
                         <Link to={`/shows/${showId}`}>
                             <video preload="none" className="show-vid" muted width="100%" height="100%" src={this.props.shows[showId].video}
                                 type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}>
@@ -233,8 +233,8 @@ class ShowType extends React.Component {
             <div className="type-shows-display">
                 {searchedShows.map((showId) => (
                     <div className="show-pic-vid" key={showId}>
-                        <button className="mylistbtn4" onClick={this.handleMyList(id)}> {this.showIndilistBtn(id)} </button>
                         <img className="show-picture" src={this.props.shows[showId].picture} alt="" />
+                            <button className="mylistbtn4" onClick={this.handleMyList(showId)}> {this.showIndilistBtn(showId)} </button>
                         <Link to={`/shows/${showId}`}>
                             <video preload="none" className="show-vid" muted width="100%" height="100%" src={this.props.shows[showId].video}
                                 type="video/mp4" onMouseOver={this.onHoverPlay} onMouseLeave={this.onLeave} controls={false}>
