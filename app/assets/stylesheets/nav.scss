@@ -1,0 +1,31 @@
+.nav-user-dropdown{
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-image: image-url("zenitsu.png");
+    margin-right: 25px;
+    margin-left: 15px;
+}
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    width: 165px;
+    right: 0px;
+    padding: 10px;
+    top: 50px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 18px;
+    background: rgba(0,0,0,0.75);
+}
+
+.dropdown-menu > p{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.nav-user-dropdown:hover > .dropdown-menu{
+    display: block;
+}

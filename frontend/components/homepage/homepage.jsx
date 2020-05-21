@@ -63,13 +63,13 @@ class Homepage extends React.Component{
     }
 
     showMylistBtn(showId){
-        if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> <i class="fas fa-check"></i> My List</div>)
-        else return (<div className="mylistbtn"> <i class="fas fa-plus"></i> My List</div>)
+        if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> <i className="fas fa-check"></i> My List</div>)
+        else return (<div className="mylistbtn"> <i className="fas fa-plus"></i> My List</div>)
     }
 
     showIndilistBtn(showId){
-        if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> <i class="fas fa-check"></i></div>)
-        else return (<div className="mylistbtn"> <i class="fas fa-plus"></i></div>)
+        if (Object.keys(this.props.mylist).includes(showId.toString())) return (<div className="mylistbtn"> <i className="fas fa-check"></i></div>)
+        else return (<div className="mylistbtn"> <i className="fas fa-plus"></i></div>)
     }
 
     showRows(genre){
@@ -146,7 +146,15 @@ class Homepage extends React.Component{
 
                 <div className="right-bar">
                     <div className="search-bar-wrapper" >{searchBar}</div>
-                    <Link className="logout-btn hover-box" onClick={this.handleLogout} to="/">Log Out</Link>
+                    <div className="nav-user-dropdown">
+                        <div className="dropdown-menu">
+                            <p>Welcome, {this.props.user.username}</p>
+                            <p><a target="_blank" href="https://github.com/joexiao97/Aniflix">Github</a></p>
+                            <p><a target="_blank" href="https://www.linkedin.com/in/joe-xiao-8a5669109/">LinkedIn</a></p>
+                            <p><a target="_blank" href="https://joexiao97.github.io/">Portfolio</a></p>
+                            <p><Link onClick={this.handleLogout} to="/">Sign out of Aniflix</Link></p>
+                        </div>
+                    </div>
                 </div>
 
             </div>

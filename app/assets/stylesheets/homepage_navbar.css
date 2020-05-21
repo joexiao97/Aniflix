@@ -68,6 +68,21 @@
     margin-right: 10px;
 }
 
+.search-bar{
+    display: flex;
+}
+
 .search-bar ::placeholder{
     color: gray;
+}
+
+.nav-user-dropdown{
+    display: block;
+    width: 50%;
+    height: 50%;
+    background-image: url("zenitsu.png");
+}
+
+.dropdown-menu{
+    display: none;
 }
