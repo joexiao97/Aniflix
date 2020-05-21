@@ -6,6 +6,7 @@ import { addShowToMyList, fetchMylistShows, removeFromMyList } from "../../actio
 
 const mapStateToProps = (state) => {
     return {
+        user: state.entities.user[state.session.id],
         shows: state.entities.shows,
         mylist: state.entities.mylist,
     }

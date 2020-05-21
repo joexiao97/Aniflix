@@ -62,6 +62,7 @@
 }
 
 .search-bar-wrapper{
+    display: flex;
     color: white;
     padding: 5px;
     border: 1px solid white;
