@@ -20,7 +20,7 @@
 
 .home-vid{
     object-fit: fill;
-    margin-top: calc(8vh + 30px);
+    margin-top: 80px;
     height: 80vh;
     max-height: 80vh;
 }

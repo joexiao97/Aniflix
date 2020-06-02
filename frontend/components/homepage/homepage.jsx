@@ -213,7 +213,15 @@ class Homepage extends React.Component{
 
                         <div className="right-bar">
                             <div className="search-bar-wrapper" >{searchBar}</div>
-                            <Link className="logout-btn hover-box" onClick={this.handleLogout} to="/">Log Out</Link>
+                            <div className="nav-user-dropdown">
+                                <div className="dropdown-menu">
+                                    <p>Welcome, {this.props.user.username}</p>
+                                    <p><a target="_blank" href="https://github.com/joexiao97/Aniflix">Github</a></p>
+                                    <p><a target="_blank" href="https://www.linkedin.com/in/joe-xiao-8a5669109/">LinkedIn</a></p>
+                                    <p><a target="_blank" href="https://joexiao97.github.io/">Portfolio</a></p>
+                                    <p><Link onClick={this.handleLogout} to="/">Sign out of Aniflix</Link></p>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -250,7 +258,15 @@ class Homepage extends React.Component{
 
                 <div className="right-bar">
                     <div className="search-bar-wrapper" >{searchBar}</div>
-                    <Link className="logout-btn hover-box" onClick={this.handleLogout} to="/">Log Out</Link>
+                    <div className="nav-user-dropdown">
+                        <div className="dropdown-menu">
+                            <p>Welcome, {this.props.user.username}</p>
+                            <p><a target="_blank" href="https://github.com/joexiao97/Aniflix">Github</a></p>
+                            <p><a target="_blank" href="https://www.linkedin.com/in/joe-xiao-8a5669109/">LinkedIn</a></p>
+                            <p><a target="_blank" href="https://joexiao97.github.io/">Portfolio</a></p>
+                            <p><Link onClick={this.handleLogout} to="/">Sign out of Aniflix</Link></p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
