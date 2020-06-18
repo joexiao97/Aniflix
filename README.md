@@ -1,41 +1,31 @@
-# aniflix
+# Aniflix
 
-![banner](app/assets/images/aniflixlogo.png)
+[Aniflix](https://ani-flix.herokuapp.com/#/) is a full-stack single-paged Netflix clone where users can watch an assortment of popular animes! Watch anywhere, anytime!
+
+![banner](app/assets/images/aniflix-homepage.png)
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 
-Aniflix is a Netflix clone based on Anime
-
-TODO: Fill out this long description.
-
 ## Table of Contents
 
-- [Install](#install)
-- [Usage](#usage)
+- [Technologies used in Aniflix](#technologies)
+- [Features](#features)
 - [Maintainers](#maintainers)
-- [Contributing](#contributing)
 - [License](#license)
 
-## Install
+## Technologies
+This full-stack project was built using Ruby On Rails, React, Redux, AWS S3, PostgreSQL, Jbuilder, and Heroku.
 
-```
-```
+## Features
 
-## Usage
-
-```
-```
+* User Authentication
+* Creating, reading, and deleting shows from My List
+* Ability to browse by movie/tv show and by genre
 
 ## Maintainers
 
 [@joexiao97](https://github.com/joexiao97)
-
-## Contributing
-
-
-
-Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
 
